@@ -29,6 +29,16 @@
             "location": "/installation/#front-end-website", 
             "text": "", 
             "title": "Front End Website"
+        }, 
+        {
+            "location": "/clients/javascript/", 
+            "text": "", 
+            "title": "Javascript"
+        }, 
+        {
+            "location": "/clients/java/", 
+            "text": "", 
+            "title": "Java"
         }
     ]
 }
