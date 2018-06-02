@@ -20,6 +20,12 @@
     
         
     <url>
+     <loc>https://docs.bullet-train.io//clients/overview/</loc>
+     <lastmod>2018-06-02</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
      <loc>https://docs.bullet-train.io//clients/javascript/</loc>
      <lastmod>2018-06-02</lastmod>
      <changefreq>daily</changefreq>
