@@ -2,7 +2,7 @@
     "docs": [
         {
             "location": "/", 
-            "text": "Overview\n\n\nBullet Train lets you manage features across web, mobile and server side applications.\n\n\nThe application consist of 3 components:\n\n\n\n\nThe \nServer-Side REST API\n.\n\n\nThe \nFront End Administration Web Interface\n.\n\n\nClient Libraries.\n\n\n\n\nTo get up and running, you can either use \nhttps://bullet-train.io/\n for 1 and 2 above, or you can self host the API and Front End. Once you have these components up and running, you can add the client libraries to your apps and start managing your features remotely. \n\n\nInstallation\n\n\nServer Side API\n\n\nThe source code and installation instructions can be found at \nthe GitHub project\n. \n\n\nFront End Website\n\n\nThe source code and installation instructions can be found at \nthe GitHub project\n. \n\n\nClient Libraries\n\n\nOnce you are setup with the front and back end, you can integrate our client libraries with your apps. \n\n\n\n\nJavascript and React/React Native\n \n\n\nNodeJS\n \n\n\nJava\n \n\n\nPython\n \n\n\nRuby\n \n\n\n.Net\n \n\n\n\n\nFeatures\n\n\nRather than just a flag that can be turned on / off, features within Bullet Train are pieces of functionality that have an enabled state as well as a configurable value. This allows you to use Bullet Train in the following ways.\n\n\n\n\nShowing and hiding features in your application. E.g. Instant messaging within an application.\n\n\nConfiguring values used within your application remotely. E.g. The number of power-ups a user might have in a game.\n\n\nConfiguring environment variables. E.g. Setting the database URL for your API.\n\n\n\n\nFeatures are created on a per project basis but edited per environment and can then be overridden on a per user basis. \n\n\nOrganisations\n\n\nOrganisations are a way for you and other team members to manage projects and their features. Users can be members of multiple organisations.\n\n\nProjects\n\n\nProjects contain one or more environments that share a single set of features and one or more environments. Organisations can have any number of projects.\n\n\nEnvironments\n\n\nEnvironments are a way to separate the configuration of your features. For example, your project's Development and Staging environments might have a feature configured as on while it is turned off in your Production environment. A project can have any number of environments. \n\n\nUsers\n\n\nUsers are a particular registration for one of your Project's environments. Registering users within the client application allows you to manage features for individual users. User features can be overridden from your environment defaults. For example, joe@yourwebsite.com would be a different user in your development environment to the one in production, and they can have different features enabled for each environment.\n\n\nUsers are created from your client SDKs, generally you'd make a call to identify a user with a unique string/id whenever they are logged into your website or whenever your API receives a request that requires checking for features.    \n\n\nSegments (\nComing soon\n)\n\n\nSegments are a way to define a group of users by traits such as number of times logged in, device, location or any number of custom defined traits.\n\n\nSimilarly to individual users, you will be able to override environment defaults for features. For example showing certain features for a \"power user\" segment.", 
+            "text": "Overview\n\n\nBullet Train lets you manage features across web, mobile and server side applications.\n\n\nThe application consist of 3 components:\n\n\n\n\nThe \nServer-Side REST API\n.\n\n\nThe \nFront End Administration Web Interface\n.\n\n\nClient Libraries.\n\n\n\n\nTo get up and running, you can either use \nhttps://bullet-train.io/\n for 1 and 2 above, or you can self host the API and Front End. Once you have these components up and running, you can add the client libraries to your apps and start managing your features remotely. \n\n\nInstallation\n\n\nServer Side API\n\n\nThe source code and installation instructions can be found at \nthe GitHub project\n. \n\n\nFront End Website\n\n\nThe source code and installation instructions can be found at \nthe GitHub project\n. \n\n\nClient Libraries\n\n\nOnce you are setup with the front and back end, you can integrate our client libraries with your apps. \n\n\n\n\nJavascript and React/React Native\n \n\n\nNodeJS\n \n\n\nJava\n \n\n\nPython\n \n\n\nRuby\n \n\n\n.Net\n \n\n\n\n\nWhat Next?\n\n\nFind out more about \nManaging Features", 
             "title": "Overview and Install"
         }, 
         {
@@ -31,34 +31,9 @@
             "title": "Client Libraries"
         }, 
         {
-            "location": "/#features", 
-            "text": "Rather than just a flag that can be turned on / off, features within Bullet Train are pieces of functionality that have an enabled state as well as a configurable value. This allows you to use Bullet Train in the following ways.   Showing and hiding features in your application. E.g. Instant messaging within an application.  Configuring values used within your application remotely. E.g. The number of power-ups a user might have in a game.  Configuring environment variables. E.g. Setting the database URL for your API.   Features are created on a per project basis but edited per environment and can then be overridden on a per user basis.", 
-            "title": "Features"
-        }, 
-        {
-            "location": "/#organisations", 
-            "text": "Organisations are a way for you and other team members to manage projects and their features. Users can be members of multiple organisations.", 
-            "title": "Organisations"
-        }, 
-        {
-            "location": "/#projects", 
-            "text": "Projects contain one or more environments that share a single set of features and one or more environments. Organisations can have any number of projects.", 
-            "title": "Projects"
-        }, 
-        {
-            "location": "/#environments", 
-            "text": "Environments are a way to separate the configuration of your features. For example, your project's Development and Staging environments might have a feature configured as on while it is turned off in your Production environment. A project can have any number of environments.", 
-            "title": "Environments"
-        }, 
-        {
-            "location": "/#users", 
-            "text": "Users are a particular registration for one of your Project's environments. Registering users within the client application allows you to manage features for individual users. User features can be overridden from your environment defaults. For example, joe@yourwebsite.com would be a different user in your development environment to the one in production, and they can have different features enabled for each environment.  Users are created from your client SDKs, generally you'd make a call to identify a user with a unique string/id whenever they are logged into your website or whenever your API receives a request that requires checking for features.", 
-            "title": "Users"
-        }, 
-        {
-            "location": "/#segments-coming-soon", 
-            "text": "Segments are a way to define a group of users by traits such as number of times logged in, device, location or any number of custom defined traits.  Similarly to individual users, you will be able to override environment defaults for features. For example showing certain features for a \"power user\" segment.", 
-            "title": "Segments (Coming soon)"
+            "location": "/#what-next", 
+            "text": "Find out more about  Managing Features", 
+            "title": "What Next?"
         }, 
         {
             "location": "/hosted-service/", 
@@ -71,14 +46,39 @@
             "title": "Hosted Service"
         }, 
         {
-            "location": "/usage/managing-features/", 
-            "text": "Coming Soon", 
+            "location": "/managing-features/", 
+            "text": "Features\n\n\nRather than just a flag that can be turned on / off, features within Bullet Train are pieces of functionality that have an enabled state as well as a configurable value. This allows you to use Bullet Train in the following ways.\n\n\n\n\nShowing and hiding features in your application. E.g. Instant messaging within an application.\n\n\nConfiguring values used within your application remotely. E.g. The number of power-ups a user might have in a game.\n\n\nConfiguring environment variables. E.g. Setting the database URL for your API.\n\n\n\n\nFeatures are created on a per project basis but edited per environment and can then be overridden on a per user basis. \n\n\nOrganisations\n\n\nOrganisations are a way for you and other team members to manage projects and their features. Users can be members of multiple organisations.\n\n\nProjects\n\n\nProjects contain one or more environments that share a single set of features and one or more environments. Organisations can have any number of projects.\n\n\nEnvironments\n\n\nEnvironments are a way to separate the configuration of your features. For example, your project's Development and Staging environments might have a feature configured as on while it is turned off in your Production environment. A project can have any number of environments. \n\n\nUsers\n\n\nUsers are a particular registration for one of your Project's environments. Registering users within the client application allows you to manage features for individual users. User features can be overridden from your environment defaults. For example, joe@yourwebsite.com would be a different user in your development environment to the one in production, and they can have different features enabled for each environment.\n\n\nUsers are created from your client SDKs, generally you'd make a call to identify a user with a unique string/id whenever they are logged into your website or whenever your API receives a request that requires checking for features.    \n\n\nSegments (\nComing soon\n)\n\n\nSegments are a way to define a group of users by traits such as number of times logged in, device, location or any number of custom defined traits.\n\n\nSimilarly to individual users, you will be able to override environment defaults for features. For example showing certain features for a \"power user\" segment.", 
             "title": "Managing Features"
         }, 
         {
-            "location": "/usage/managing-features/#coming-soon", 
-            "text": "", 
-            "title": "Coming Soon"
+            "location": "/managing-features/#features", 
+            "text": "Rather than just a flag that can be turned on / off, features within Bullet Train are pieces of functionality that have an enabled state as well as a configurable value. This allows you to use Bullet Train in the following ways.   Showing and hiding features in your application. E.g. Instant messaging within an application.  Configuring values used within your application remotely. E.g. The number of power-ups a user might have in a game.  Configuring environment variables. E.g. Setting the database URL for your API.   Features are created on a per project basis but edited per environment and can then be overridden on a per user basis.", 
+            "title": "Features"
+        }, 
+        {
+            "location": "/managing-features/#organisations", 
+            "text": "Organisations are a way for you and other team members to manage projects and their features. Users can be members of multiple organisations.", 
+            "title": "Organisations"
+        }, 
+        {
+            "location": "/managing-features/#projects", 
+            "text": "Projects contain one or more environments that share a single set of features and one or more environments. Organisations can have any number of projects.", 
+            "title": "Projects"
+        }, 
+        {
+            "location": "/managing-features/#environments", 
+            "text": "Environments are a way to separate the configuration of your features. For example, your project's Development and Staging environments might have a feature configured as on while it is turned off in your Production environment. A project can have any number of environments.", 
+            "title": "Environments"
+        }, 
+        {
+            "location": "/managing-features/#users", 
+            "text": "Users are a particular registration for one of your Project's environments. Registering users within the client application allows you to manage features for individual users. User features can be overridden from your environment defaults. For example, joe@yourwebsite.com would be a different user in your development environment to the one in production, and they can have different features enabled for each environment.  Users are created from your client SDKs, generally you'd make a call to identify a user with a unique string/id whenever they are logged into your website or whenever your API receives a request that requires checking for features.", 
+            "title": "Users"
+        }, 
+        {
+            "location": "/managing-features/#segments-coming-soon", 
+            "text": "Segments are a way to define a group of users by traits such as number of times logged in, device, location or any number of custom defined traits.  Similarly to individual users, you will be able to override environment defaults for features. For example showing certain features for a \"power user\" segment.", 
+            "title": "Segments (Coming soon)"
         }, 
         {
             "location": "/clients/javascript/", 
