@@ -8,7 +8,7 @@
   
   
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>Javascript/React - Bullet Train Docs</title>
+  <title>Javascript/React Native - Bullet Train Docs</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
@@ -17,7 +17,7 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Javascript/React";
+    var mkdocs_page_name = "Javascript/React Native";
     var mkdocs_page_input_path = "clients/javascript.md";
     var mkdocs_page_url = "/clients/javascript/";
   </script>
@@ -64,11 +64,6 @@
           
             <li class="toctree-l1">
 		
-    <a class="" href="../../installation/">Installation</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
     <a class="" href="../../hosted-service/">Hosted Service</a>
 	    </li>
           
@@ -76,16 +71,21 @@
 		
     <span class="caption-text">Clients</span>
     <ul class="subnav">
-                <li class="">
-                    
-    <a class="" href="../overview/">Overview</a>
-                </li>
                 <li class=" current">
                     
-    <a class="current" href="./">Javascript/React</a>
+    <a class="current" href="./">Javascript/React Native</a>
     <ul class="subnav">
             
-    <li class="toctree-l3"><a href="#javascriptreactreact-native-client">Javascript/React/React Native Client</a></li>
+    <li class="toctree-l3"><a href="#installation">Installation</a></li>
+    
+
+    <li class="toctree-l3"><a href="#basic-usage">Basic Usage</a></li>
+    
+
+    <li class="toctree-l3"><a href="#identifying-users">Identifying users</a></li>
+    
+
+    <li class="toctree-l3"><a href="#api-reference">API Reference</a></li>
     
 
     </ul>
@@ -127,7 +127,7 @@
         
       
     
-    <li>Javascript/React</li>
+    <li>Javascript/React Native</li>
     <li class="wy-breadcrumbs-aside">
       
         <a href="https://github.com/SolidStateGroup/Bullet-Train-Docs/edit/master/docs/clients/javascript.md"
@@ -140,7 +140,186 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="javascriptreactreact-native-client">Javascript/React/React Native Client</h1>
+                <h2 id="installation">Installation</h2>
+<p><strong>NPM</strong></p>
+<pre><code>npm i bullet-train-client --save
+</code></pre>
+
+<p><strong>Via JavaScript CDN</strong></p>
+<pre><code>&lt;script src=&quot;https://cdn.jsdelivr.net/npm/bullet-train-client/lib/index.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+
+<p><strong>NPM for React Native</strong></p>
+<pre><code>npm i react-native-bullet-train --save
+</code></pre>
+
+<h2 id="basic-usage">Basic Usage</h2>
+<p>The SDK is initialised against a single environment within a project on <a href="https://bullet-train.io">https://bullet-train.io</a>,
+for example the Development or Production environment. You can find your environment key in the Environment settings page.</p>
+<p><img src="/images/api-key.png"/></p>
+<p>Example applications for Web and React Native can be found here:
+ - <a href="https://github.com/SolidStateGroup/bullet-train-js-client/tree/master/bullet-train-client/example">Web example</a>
+ - <a href="https://github.com/SolidStateGroup/bullet-train-js-client/tree/master/react-native-bullet-train/example">React Native example</a></p>
+<p><strong>Example: Initialising the SDK</strong></p>
+<pre><code class="javascript">import bulletTrain from &quot;bullet-train-client or react-native-bullet-train&quot;; //Add this line if you're using bulletTrain via npm
+
+bulletTrain.init({
+    environmentID:&quot;&lt;YOUR_ENVIRONMENT_KEY&gt;&quot;,
+    onChange: (oldFlags,params)=&gt;{ //Occurs whenever flags are changed
+
+        const {isFromServer} = params; //determines if the update came from the server or local cached storage
+
+        //Check for a feature
+        if (bulletTrain.hasFeature(&quot;myCoolFeature&quot;)){
+            myCoolFeature();
+        }
+
+
+        //Or, use the value of a feature
+        const bannerSize = bulletTrain.getValue(&quot;bannerSize&quot;);
+
+        //Check whether value has changed
+        const bannerSizeOld = oldFlags[&quot;bannerSize&quot;] &amp;&amp; oldFlags[&quot;bannerSize&quot;].value;
+        if (bannerSize !== bannerSizeOld) {
+
+        }
+
+    }
+});
+</code></pre>
+
+<h2 id="identifying-users">Identifying users</h2>
+<p>Identifying users allows you to target specific users from the Bullet Train dashboard. You can call this before or after you initialise the project, calling it after will re-fetch features from the API.</p>
+<p>User features can be managed by navigating to users on <a href="https://bullet-train.io">https://bullet-train.io</a> for your desired project.
+ <img src="/images/user-features.png"/></p>
+<p><strong>Example: Initialising the SDK and identifying as a user</strong></p>
+<pre><code>import bulletTrain from 'bullet-train-client';
+
+/*
+Can be called both before or after you're done initialising the project.
+Calling identify before will prevent flags being fetched twice.
+*/
+bulletTrain.identify(&quot;bullet_train_sample_user&quot;,{traits}); //This will create a user in the dashboard if they don't already exist
+
+//Standard project initialisation
+bulletTrain.init({
+    environmentID: &quot;QjgYur4LQTwe5HpvbvhpzK&quot;,
+        onChange: (oldFlags,params)=&gt;{ //Occurs whenever flags are changed
+
+        const {isFromServer} = params; //determines if the update came from the server or local cached storage
+
+        //Check for a feature
+        if (bulletTrain.hasFeature(&quot;myPowerUserFeature&quot;)){
+            myPowerUserFeature();
+        }
+
+
+        //Or, use the value of a feature
+        const myPowerUserFeature = bulletTrain.getValue(&quot;myPowerUserFeature&quot;);
+
+        //Check whether value has changed
+        const myPowerUserFeatureOld = oldFlags[&quot;myPowerUserFeature&quot;] &amp;&amp; oldFlags[&quot;myPowerUserFeature&quot;].value;
+        if (myPowerUserFeature !== myPowerUserFeatureOld) {
+
+        }
+
+    }
+})
+</code></pre>
+
+<h2 id="api-reference">API Reference</h2>
+<p><strong>Initialisation options</strong></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th align="center">Description</th>
+<th align="right">Required</th>
+<th align="right">Default Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>environmentID</code></td>
+<td align="center">Defines which project environment you wish to get flags for. <em>example ACME Project - Staging.</em></td>
+<td align="right"><strong>YES</strong></td>
+<td align="right">null</td>
+</tr>
+<tr>
+<td><code>onChange</code></td>
+<td align="center">Your callback function for when the flags are retrieved <code>(flags,{isFromServer:true/false})=&gt;{...}</code></td>
+<td align="right"><strong>YES</strong></td>
+<td align="right">null</td>
+</tr>
+<tr>
+<td><code>onError</code></td>
+<td align="center">Callback function on failure to retrieve flags. <code>(error)=&gt;{...}</code></td>
+<td align="right"></td>
+<td align="right">null</td>
+</tr>
+<tr>
+<td><code>defaultFlags</code></td>
+<td align="center">Allows you define default features, these will all be overridden on first retrieval of features.</td>
+<td align="right"></td>
+<td align="right">null</td>
+</tr>
+<tr>
+<td><code>disableCache</code></td>
+<td align="center">If you want to disable local storage of feature flags.</td>
+<td align="right"></td>
+<td align="right">false</td>
+</tr>
+<tr>
+<td><code>api</code></td>
+<td align="center">Use this property to define where you're getting feature flags from, e.g. if you're self hosting.</td>
+<td align="right"></td>
+<td align="right">https://featureflagger.3qqe.flynnhub.com/api/</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Available Functions</strong></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th align="center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>init</code></td>
+<td align="center">Initialise the sdk against a particular environment</td>
+</tr>
+<tr>
+<td><code>hasFeature(key)</code></td>
+<td align="center">Get the value of a particular feature e.g. <code>bulletTrain.hasFeature("powerUserFeature") // true</code></td>
+</tr>
+<tr>
+<td><code>getValue(key)</code></td>
+<td align="center">Get the value of a particular feature e.g. <code>bulletTrain.getValue("font_size") // 10</code></td>
+</tr>
+<tr>
+<td><code>startListening(ticks=1000)</code></td>
+<td align="center">Poll the api for changes every x milliseconds</td>
+</tr>
+<tr>
+<td><code>stopListening()</code></td>
+<td align="center">Stop polling the api</td>
+</tr>
+<tr>
+<td><code>getFlags()</code></td>
+<td align="center">Trigger a manual fetch of the environment features, if a user is identified it will fetch their features</td>
+</tr>
+<tr>
+<td><code>identify(userId)</code></td>
+<td align="center">Identify as a user, this will create a user for your environment in the dashboard if they don't exist, it will also trigger a call to <code>getFlags()</code></td>
+</tr>
+<tr>
+<td><code>logout()</code></td>
+<td align="center">Stop identifying as a user, this will trigger a call to <code>getFlags()</code></td>
+</tr>
+</tbody>
+</table>
               
             </div>
           </div>
@@ -151,7 +330,7 @@
         <a href="../java/" class="btn btn-neutral float-right" title="Java">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../overview/" class="btn btn-neutral" title="Overview"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../hosted-service/" class="btn btn-neutral" title="Hosted Service"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -179,7 +358,7 @@
           <a href="https://github.com/SolidStateGroup/Bullet-Train-Docs/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
-        <span><a href="../overview/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../../hosted-service/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
         <span style="margin-left: 15px"><a href="../java/" style="color: #fcfcfc">Next &raquo;</a></span>

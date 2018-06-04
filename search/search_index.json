@@ -2,68 +2,93 @@
     "docs": [
         {
             "location": "/", 
-            "text": "Welcome to Bullet Train", 
+            "text": "Welcome to Bullet Train\n\n\nBullet Train consist of 3 components:\n\n\n\n\nThe Server-Side REST API.\n\n\nThe Front End Administration Web Interface.\n\n\nClient Libraries.\n\n\n\n\nTo get up and running, you can either use \nhttps://bullet-train.io/\n for 1 and 2 above, or you can self host the API and Front End. This guide will get you set up self-hosting 1 and 2. Once you have these components up and running, you can add the client libraries to your apps and start managing your features remotely. \n\n\nServer Side API\n\n\nThe source code can be found at \nthis GitHub project\n. \n\n\nFront End Website\n\n\nThe source code can be found at \nthis GitHub project\n. \n\n\nClient Libraries\n\n\nOnce you are setup with the front and back end, you can integrate our client libraries with your apps. \n\n\n\n\nJavascript and React/React Native\n \n\n\nNodeJS\n \n\n\nJava\n \n\n\n\n\nConcepts\n\n\nBullet Train lets you manage features across web, mobile and server side applications.\n\n\nFeatures\n\n\nRather than just a flag that can be turned on / off, features within Bullet Train are pieces of functionality that have an enabled state as well as a configurable value. This allows you to use Bullet Train in the following ways.\n\n\n\n\nShowing and hiding features in your application. E.g. Instant messaging within an application\n\n\nConfiguring values used within your application remotely. E.g. The number of powerups a user might have in a game/\n\n\nConfiguring environment variables. E.g. Setting the database URL for your API.\n\n\n\n\nFeatures are created on a per project basis but edited per environment and can then be overridden on a per user basis. \n\n\nOrganisations\n\n\nOrganisations are a way for you and other team members to manage projects and their features. Users can be members of multiple organisations.\n\n\nProjects\n\n\nProjects contain one or more environments that share a single set of features and one or more environments. Organisations can have any number of projects.\n\n\nEnvironments\n\n\nEnvironments are a way to separate the configuration of your features. For example, your project's Development and Staging environments might have a feature configured as on while it is turned off in your Production environment. A project can have any number of environments. \n\n\nUsers\n\n\nUsers are a particular registration for one of your Project's environments, features can be overridden from your environment defaults. For example, joe@yourwebsite.com would be a different user in your development environment to the one in production.\n\n\nUsers are created from your client SDKs, generally you'd make a call to identify as user whenever they are logged into your website or whenever your API receives a request that requires checking for features.    \n\n\nSegments\n\n\nComing soon\n Segments are a way to define a group of users by traits such as number of times logged in, device, location or any number of custom defined traits. With", 
             "title": "Overview"
         }, 
         {
             "location": "/#welcome-to-bullet-train", 
-            "text": "", 
+            "text": "Bullet Train consist of 3 components:   The Server-Side REST API.  The Front End Administration Web Interface.  Client Libraries.   To get up and running, you can either use  https://bullet-train.io/  for 1 and 2 above, or you can self host the API and Front End. This guide will get you set up self-hosting 1 and 2. Once you have these components up and running, you can add the client libraries to your apps and start managing your features remotely.", 
             "title": "Welcome to Bullet Train"
         }, 
         {
-            "location": "/installation/", 
-            "text": "Installation\n\n\nBullet Train consist of 3 components:\n\n\n\n\nThe Server-Side REST API.\n\n\nThe Front End Administration Web Interface.\n\n\nClient Libraries.\n\n\n\n\nTo get up and running, you can either use \nhttps://bullet-train.io/\n for 1 and 2 above, or you can self host the API and Front End. This guide will get you set up self-hosting 1 and 2. Once you have these components up and running, you can add the client libraries to your apps and start managing your features remotely. \n\n\nServer Side API\n\n\nThe source code can be found at \nthis GitHub project\n. \n\n\nFront End Website\n\n\nThe source code can be found at \nthis GitHub project\n. \n\n\nClient Libraries\n\n\nOnce you are setup with the front and back end, you can integrate our client libraries with your apps. \n\n\n\n\nJavascript and React/React Native\n \n\n\nNodeJS\n \n\n\nJava", 
-            "title": "Installation"
-        }, 
-        {
-            "location": "/installation/#installation", 
-            "text": "Bullet Train consist of 3 components:   The Server-Side REST API.  The Front End Administration Web Interface.  Client Libraries.   To get up and running, you can either use  https://bullet-train.io/  for 1 and 2 above, or you can self host the API and Front End. This guide will get you set up self-hosting 1 and 2. Once you have these components up and running, you can add the client libraries to your apps and start managing your features remotely.", 
-            "title": "Installation"
-        }, 
-        {
-            "location": "/installation/#server-side-api", 
+            "location": "/#server-side-api", 
             "text": "The source code can be found at  this GitHub project .", 
             "title": "Server Side API"
         }, 
         {
-            "location": "/installation/#front-end-website", 
+            "location": "/#front-end-website", 
             "text": "The source code can be found at  this GitHub project .", 
             "title": "Front End Website"
         }, 
         {
-            "location": "/installation/#client-libraries", 
+            "location": "/#client-libraries", 
             "text": "Once you are setup with the front and back end, you can integrate our client libraries with your apps.    Javascript and React/React Native    NodeJS    Java", 
             "title": "Client Libraries"
         }, 
         {
+            "location": "/#concepts", 
+            "text": "Bullet Train lets you manage features across web, mobile and server side applications.", 
+            "title": "Concepts"
+        }, 
+        {
+            "location": "/#features", 
+            "text": "Rather than just a flag that can be turned on / off, features within Bullet Train are pieces of functionality that have an enabled state as well as a configurable value. This allows you to use Bullet Train in the following ways.   Showing and hiding features in your application. E.g. Instant messaging within an application  Configuring values used within your application remotely. E.g. The number of powerups a user might have in a game/  Configuring environment variables. E.g. Setting the database URL for your API.   Features are created on a per project basis but edited per environment and can then be overridden on a per user basis.", 
+            "title": "Features"
+        }, 
+        {
+            "location": "/#organisations", 
+            "text": "Organisations are a way for you and other team members to manage projects and their features. Users can be members of multiple organisations.", 
+            "title": "Organisations"
+        }, 
+        {
+            "location": "/#projects", 
+            "text": "Projects contain one or more environments that share a single set of features and one or more environments. Organisations can have any number of projects.", 
+            "title": "Projects"
+        }, 
+        {
+            "location": "/#environments", 
+            "text": "Environments are a way to separate the configuration of your features. For example, your project's Development and Staging environments might have a feature configured as on while it is turned off in your Production environment. A project can have any number of environments.", 
+            "title": "Environments"
+        }, 
+        {
+            "location": "/#users", 
+            "text": "Users are a particular registration for one of your Project's environments, features can be overridden from your environment defaults. For example, joe@yourwebsite.com would be a different user in your development environment to the one in production.  Users are created from your client SDKs, generally you'd make a call to identify as user whenever they are logged into your website or whenever your API receives a request that requires checking for features.", 
+            "title": "Users"
+        }, 
+        {
+            "location": "/#segments", 
+            "text": "Coming soon  Segments are a way to define a group of users by traits such as number of times logged in, device, location or any number of custom defined traits. With", 
+            "title": "Segments"
+        }, 
+        {
             "location": "/hosted-service/", 
-            "text": "Hosted Service\n\n\nIf you would rather skip the hosting and jump straight to integrating Bullet Train with your own application, you can use \nhttps://bullet-train.io/\n right now. \n\n\nWe are going to be bringing paid plans to the service soon, with pricing to suit startups, not enterprise customers.\n\n\nIf you want to discuss hosting options, \nplease get in touch\n.", 
+            "text": "If you would rather skip the hosting and jump straight to integrating Bullet Train with your own application, you can use \nhttps://bullet-train.io/\n right now. \n\n\nWe are going to be bringing paid plans to the service soon, with pricing to suit startups, not enterprise customers.\n\n\nIf you want to discuss hosting options, \nplease get in touch\n.", 
             "title": "Hosted Service"
-        }, 
-        {
-            "location": "/hosted-service/#hosted-service", 
-            "text": "If you would rather skip the hosting and jump straight to integrating Bullet Train with your own application, you can use  https://bullet-train.io/  right now.   We are going to be bringing paid plans to the service soon, with pricing to suit startups, not enterprise customers.  If you want to discuss hosting options,  please get in touch .", 
-            "title": "Hosted Service"
-        }, 
-        {
-            "location": "/clients/overview/", 
-            "text": "Welcome to Bullet Train", 
-            "title": "Overview"
-        }, 
-        {
-            "location": "/clients/overview/#welcome-to-bullet-train", 
-            "text": "", 
-            "title": "Welcome to Bullet Train"
         }, 
         {
             "location": "/clients/javascript/", 
-            "text": "Javascript/React/React Native Client", 
-            "title": "Javascript/React"
+            "text": "Installation\n\n\nNPM\n\n\nnpm i bullet-train-client --save\n\n\n\n\nVia JavaScript CDN\n\n\nscript src=\nhttps://cdn.jsdelivr.net/npm/bullet-train-client/lib/index.js\n/script\n\n\n\n\n\nNPM for React Native\n\n\nnpm i react-native-bullet-train --save\n\n\n\n\nBasic Usage\n\n\nThe SDK is initialised against a single environment within a project on \nhttps://bullet-train.io\n,\nfor example the Development or Production environment. You can find your environment key in the Environment settings page.\n\n\n\n\nExample applications for Web and React Native can be found here:\n - \nWeb example\n\n - \nReact Native example\n\n\nExample: Initialising the SDK\n\n\nimport bulletTrain from \nbullet-train-client or react-native-bullet-train\n; //Add this line if you're using bulletTrain via npm\n\nbulletTrain.init({\n    environmentID:\nYOUR_ENVIRONMENT_KEY\n,\n    onChange: (oldFlags,params)=\n{ //Occurs whenever flags are changed\n\n        const {isFromServer} = params; //determines if the update came from the server or local cached storage\n\n        //Check for a feature\n        if (bulletTrain.hasFeature(\nmyCoolFeature\n)){\n            myCoolFeature();\n        }\n\n\n        //Or, use the value of a feature\n        const bannerSize = bulletTrain.getValue(\nbannerSize\n);\n\n        //Check whether value has changed\n        const bannerSizeOld = oldFlags[\nbannerSize\n] \n oldFlags[\nbannerSize\n].value;\n        if (bannerSize !== bannerSizeOld) {\n\n        }\n\n    }\n});\n\n\n\n\nIdentifying users\n\n\nIdentifying users allows you to target specific users from the Bullet Train dashboard. You can call this before or after you initialise the project, calling it after will re-fetch features from the API.\n\n\nUser features can be managed by navigating to users on \nhttps://bullet-train.io\n for your desired project.\n \n\n\nExample: Initialising the SDK and identifying as a user\n\n\nimport bulletTrain from 'bullet-train-client';\n\n/*\nCan be called both before or after you're done initialising the project.\nCalling identify before will prevent flags being fetched twice.\n*/\nbulletTrain.identify(\nbullet_train_sample_user\n,{traits}); //This will create a user in the dashboard if they don't already exist\n\n//Standard project initialisation\nbulletTrain.init({\n    environmentID: \nQjgYur4LQTwe5HpvbvhpzK\n,\n        onChange: (oldFlags,params)=\n{ //Occurs whenever flags are changed\n\n        const {isFromServer} = params; //determines if the update came from the server or local cached storage\n\n        //Check for a feature\n        if (bulletTrain.hasFeature(\nmyPowerUserFeature\n)){\n            myPowerUserFeature();\n        }\n\n\n        //Or, use the value of a feature\n        const myPowerUserFeature = bulletTrain.getValue(\nmyPowerUserFeature\n);\n\n        //Check whether value has changed\n        const myPowerUserFeatureOld = oldFlags[\nmyPowerUserFeature\n] \n oldFlags[\nmyPowerUserFeature\n].value;\n        if (myPowerUserFeature !== myPowerUserFeatureOld) {\n\n        }\n\n    }\n})\n\n\n\n\nAPI Reference\n\n\nInitialisation options\n\n\n\n\n\n\n\n\nProperty\n\n\nDescription\n\n\nRequired\n\n\nDefault Value\n\n\n\n\n\n\n\n\n\n\nenvironmentID\n\n\nDefines which project environment you wish to get flags for. \nexample ACME Project - Staging.\n\n\nYES\n\n\nnull\n\n\n\n\n\n\nonChange\n\n\nYour callback function for when the flags are retrieved \n(flags,{isFromServer:true/false})=\n{...}\n\n\nYES\n\n\nnull\n\n\n\n\n\n\nonError\n\n\nCallback function on failure to retrieve flags. \n(error)=\n{...}\n\n\n\n\nnull\n\n\n\n\n\n\ndefaultFlags\n\n\nAllows you define default features, these will all be overridden on first retrieval of features.\n\n\n\n\nnull\n\n\n\n\n\n\ndisableCache\n\n\nIf you want to disable local storage of feature flags.\n\n\n\n\nfalse\n\n\n\n\n\n\napi\n\n\nUse this property to define where you're getting feature flags from, e.g. if you're self hosting.\n\n\n\n\nhttps://featureflagger.3qqe.flynnhub.com/api/\n\n\n\n\n\n\n\n\nAvailable Functions\n\n\n\n\n\n\n\n\nProperty\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\ninit\n\n\nInitialise the sdk against a particular environment\n\n\n\n\n\n\nhasFeature(key)\n\n\nGet the value of a particular feature e.g. \nbulletTrain.hasFeature(\"powerUserFeature\") // true\n\n\n\n\n\n\ngetValue(key)\n\n\nGet the value of a particular feature e.g. \nbulletTrain.getValue(\"font_size\") // 10\n\n\n\n\n\n\nstartListening(ticks=1000)\n\n\nPoll the api for changes every x milliseconds\n\n\n\n\n\n\nstopListening()\n\n\nStop polling the api\n\n\n\n\n\n\ngetFlags()\n\n\nTrigger a manual fetch of the environment features, if a user is identified it will fetch their features\n\n\n\n\n\n\nidentify(userId)\n\n\nIdentify as a user, this will create a user for your environment in the dashboard if they don't exist, it will also trigger a call to \ngetFlags()\n\n\n\n\n\n\nlogout()\n\n\nStop identifying as a user, this will trigger a call to \ngetFlags()", 
+            "title": "Javascript/React Native"
         }, 
         {
-            "location": "/clients/javascript/#javascriptreactreact-native-client", 
-            "text": "", 
-            "title": "Javascript/React/React Native Client"
+            "location": "/clients/javascript/#installation", 
+            "text": "NPM  npm i bullet-train-client --save  Via JavaScript CDN  script src= https://cdn.jsdelivr.net/npm/bullet-train-client/lib/index.js /script   NPM for React Native  npm i react-native-bullet-train --save", 
+            "title": "Installation"
+        }, 
+        {
+            "location": "/clients/javascript/#basic-usage", 
+            "text": "The SDK is initialised against a single environment within a project on  https://bullet-train.io ,\nfor example the Development or Production environment. You can find your environment key in the Environment settings page.   Example applications for Web and React Native can be found here:\n -  Web example \n -  React Native example  Example: Initialising the SDK  import bulletTrain from  bullet-train-client or react-native-bullet-train ; //Add this line if you're using bulletTrain via npm\n\nbulletTrain.init({\n    environmentID: YOUR_ENVIRONMENT_KEY ,\n    onChange: (oldFlags,params)= { //Occurs whenever flags are changed\n\n        const {isFromServer} = params; //determines if the update came from the server or local cached storage\n\n        //Check for a feature\n        if (bulletTrain.hasFeature( myCoolFeature )){\n            myCoolFeature();\n        }\n\n\n        //Or, use the value of a feature\n        const bannerSize = bulletTrain.getValue( bannerSize );\n\n        //Check whether value has changed\n        const bannerSizeOld = oldFlags[ bannerSize ]   oldFlags[ bannerSize ].value;\n        if (bannerSize !== bannerSizeOld) {\n\n        }\n\n    }\n});", 
+            "title": "Basic Usage"
+        }, 
+        {
+            "location": "/clients/javascript/#identifying-users", 
+            "text": "Identifying users allows you to target specific users from the Bullet Train dashboard. You can call this before or after you initialise the project, calling it after will re-fetch features from the API.  User features can be managed by navigating to users on  https://bullet-train.io  for your desired project.\n   Example: Initialising the SDK and identifying as a user  import bulletTrain from 'bullet-train-client';\n\n/*\nCan be called both before or after you're done initialising the project.\nCalling identify before will prevent flags being fetched twice.\n*/\nbulletTrain.identify( bullet_train_sample_user ,{traits}); //This will create a user in the dashboard if they don't already exist\n\n//Standard project initialisation\nbulletTrain.init({\n    environmentID:  QjgYur4LQTwe5HpvbvhpzK ,\n        onChange: (oldFlags,params)= { //Occurs whenever flags are changed\n\n        const {isFromServer} = params; //determines if the update came from the server or local cached storage\n\n        //Check for a feature\n        if (bulletTrain.hasFeature( myPowerUserFeature )){\n            myPowerUserFeature();\n        }\n\n\n        //Or, use the value of a feature\n        const myPowerUserFeature = bulletTrain.getValue( myPowerUserFeature );\n\n        //Check whether value has changed\n        const myPowerUserFeatureOld = oldFlags[ myPowerUserFeature ]   oldFlags[ myPowerUserFeature ].value;\n        if (myPowerUserFeature !== myPowerUserFeatureOld) {\n\n        }\n\n    }\n})", 
+            "title": "Identifying users"
+        }, 
+        {
+            "location": "/clients/javascript/#api-reference", 
+            "text": "Initialisation options     Property  Description  Required  Default Value      environmentID  Defines which project environment you wish to get flags for.  example ACME Project - Staging.  YES  null    onChange  Your callback function for when the flags are retrieved  (flags,{isFromServer:true/false})= {...}  YES  null    onError  Callback function on failure to retrieve flags.  (error)= {...}   null    defaultFlags  Allows you define default features, these will all be overridden on first retrieval of features.   null    disableCache  If you want to disable local storage of feature flags.   false    api  Use this property to define where you're getting feature flags from, e.g. if you're self hosting.   https://featureflagger.3qqe.flynnhub.com/api/     Available Functions     Property  Description      init  Initialise the sdk against a particular environment    hasFeature(key)  Get the value of a particular feature e.g.  bulletTrain.hasFeature(\"powerUserFeature\") // true    getValue(key)  Get the value of a particular feature e.g.  bulletTrain.getValue(\"font_size\") // 10    startListening(ticks=1000)  Poll the api for changes every x milliseconds    stopListening()  Stop polling the api    getFlags()  Trigger a manual fetch of the environment features, if a user is identified it will fetch their features    identify(userId)  Identify as a user, this will create a user for your environment in the dashboard if they don't exist, it will also trigger a call to  getFlags()    logout()  Stop identifying as a user, this will trigger a call to  getFlags()", 
+            "title": "API Reference"
         }, 
         {
             "location": "/clients/java/", 

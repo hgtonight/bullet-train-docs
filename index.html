@@ -64,13 +64,37 @@
             
     <li class="toctree-l2"><a href="#welcome-to-bullet-train">Welcome to Bullet Train</a></li>
     
+        <ul>
+        
+            <li><a class="toctree-l3" href="#server-side-api">Server Side API</a></li>
+        
+            <li><a class="toctree-l3" href="#front-end-website">Front End Website</a></li>
+        
+            <li><a class="toctree-l3" href="#client-libraries">Client Libraries</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l2"><a href="#concepts">Concepts</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#features">Features</a></li>
+        
+            <li><a class="toctree-l3" href="#organisations">Organisations</a></li>
+        
+            <li><a class="toctree-l3" href="#projects">Projects</a></li>
+        
+            <li><a class="toctree-l3" href="#environments">Environments</a></li>
+        
+            <li><a class="toctree-l3" href="#users">Users</a></li>
+        
+            <li><a class="toctree-l3" href="#segments">Segments</a></li>
+        
+        </ul>
+    
 
     </ul>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="installation/">Installation</a>
 	    </li>
           
             <li class="toctree-l1">
@@ -84,11 +108,7 @@
     <ul class="subnav">
                 <li class="">
                     
-    <a class="" href="clients/overview/">Overview</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="clients/javascript/">Javascript/React</a>
+    <a class="" href="clients/javascript/">Javascript/React Native</a>
                 </li>
                 <li class="">
                     
@@ -136,7 +156,46 @@
           <div role="main">
             <div class="section">
               
-                <h2 id="welcome-to-bullet-train">Welcome to Bullet Train</h2>
+                <h1 id="welcome-to-bullet-train">Welcome to Bullet Train</h1>
+<p>Bullet Train consist of 3 components:</p>
+<ol>
+<li>The Server-Side REST API.</li>
+<li>The Front End Administration Web Interface.</li>
+<li>Client Libraries.</li>
+</ol>
+<p>To get up and running, you can either use <a href="https://bullet-train.io/">https://bullet-train.io/</a> for 1 and 2 above, or you can self host the API and Front End. This guide will get you set up self-hosting 1 and 2. Once you have these components up and running, you can add the client libraries to your apps and start managing your features remotely. </p>
+<h2 id="server-side-api">Server Side API</h2>
+<p>The source code can be found at <a href="https://github.com/SolidStateGroup/Bullet-Train-API">this GitHub project</a>. </p>
+<h2 id="front-end-website">Front End Website</h2>
+<p>The source code can be found at <a href="https://github.com/SolidStateGroup/Bullet-Train-Frontend">this GitHub project</a>. </p>
+<h2 id="client-libraries">Client Libraries</h2>
+<p>Once you are setup with the front and back end, you can integrate our client libraries with your apps. </p>
+<ul>
+<li><a href="clients/javascript/">Javascript and React/React Native</a> </li>
+<li><a href="clients/node/">NodeJS</a> </li>
+<li><a href="clients/java/">Java</a> </li>
+</ul>
+<h1 id="concepts">Concepts</h1>
+<p>Bullet Train lets you manage features across web, mobile and server side applications.</p>
+<h2 id="features">Features</h2>
+<p>Rather than just a flag that can be turned on / off, features within Bullet Train are pieces of functionality that have an enabled state as well as a configurable value. This allows you to use Bullet Train in the following ways.</p>
+<ul>
+<li>Showing and hiding features in your application. E.g. Instant messaging within an application</li>
+<li>Configuring values used within your application remotely. E.g. The number of powerups a user might have in a game/</li>
+<li>Configuring environment variables. E.g. Setting the database URL for your API.</li>
+</ul>
+<p>Features are created on a per project basis but edited per environment and can then be overridden on a per user basis. </p>
+<h2 id="organisations">Organisations</h2>
+<p>Organisations are a way for you and other team members to manage projects and their features. Users can be members of multiple organisations.</p>
+<h2 id="projects">Projects</h2>
+<p>Projects contain one or more environments that share a single set of features and one or more environments. Organisations can have any number of projects.</p>
+<h2 id="environments">Environments</h2>
+<p>Environments are a way to separate the configuration of your features. For example, your project's Development and Staging environments might have a feature configured as on while it is turned off in your Production environment. A project can have any number of environments. </p>
+<h2 id="users">Users</h2>
+<p>Users are a particular registration for one of your Project's environments, features can be overridden from your environment defaults. For example, joe@yourwebsite.com would be a different user in your development environment to the one in production.</p>
+<p>Users are created from your client SDKs, generally you'd make a call to identify as user whenever they are logged into your website or whenever your API receives a request that requires checking for features.    </p>
+<h2 id="segments">Segments</h2>
+<p><strong>Coming soon</strong> Segments are a way to define a group of users by traits such as number of times logged in, device, location or any number of custom defined traits. With </p>
               
             </div>
           </div>
@@ -144,7 +203,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="installation/" class="btn btn-neutral float-right" title="Installation">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="hosted-service/" class="btn btn-neutral float-right" title="Hosted Service">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
     </div>
@@ -174,7 +233,7 @@
       
       
       
-        <span style="margin-left: 15px"><a href="installation/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="hosted-service/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
@@ -188,5 +247,5 @@
 
 <!--
 MkDocs version : 0.17.3
-Build Date UTC : 2018-06-04 08:39:49
+Build Date UTC : 2018-06-04 15:55:18
 -->
