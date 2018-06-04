@@ -8,7 +8,7 @@
   
   
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>Java - Bullet Train Docs</title>
+  <title>Installation - Bullet Train Docs</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
@@ -17,9 +17,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Java";
-    var mkdocs_page_input_path = "clients/java.md";
-    var mkdocs_page_url = "/clients/java/";
+    var mkdocs_page_name = "Installation";
+    var mkdocs_page_input_path = "gettingstarted/installation.md";
+    var mkdocs_page_url = "/gettingstarted/installation/";
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js"></script>
@@ -69,15 +69,28 @@
 
         
             
-    <li class="toctree-l1 ">
-        <a class="" href="../../gettingstarted/installation/">Installation</a>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Installation</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#installation">Installation</a></li>
+                
+                    <li><a class="toctree-l4" href="#server-side-api">Server Side API</a></li>
+                
+                    <li><a class="toctree-l4" href="#front-end-website">Front End Website</a></li>
+                
+                    <li><a class="toctree-l4" href="#client-libraries">Client Libraries</a></li>
+                
+            
+            </ul>
         
     </li>
 
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../../gettingstarted/hosted-service/">Hosted Service</a>
+        <a class="" href="../hosted-service/">Hosted Service</a>
         
     </li>
 
@@ -92,49 +105,42 @@
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../javascript/">Javascript/React Native</a>
+        <a class="" href="../../clients/javascript/">Javascript/React Native</a>
         
     </li>
 
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../node/">Node</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 current">
-        <a class="current" href="./">Java</a>
-        
-            <ul>
-            
-                <li class="toctree-l3"><a href="#java-client">Java Client</a></li>
-                
-            
-            </ul>
+        <a class="" href="../../clients/node/">Node</a>
         
     </li>
 
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../python/">Python</a>
+        <a class="" href="../../clients/java/">Java</a>
         
     </li>
 
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../ruby/">Ruby</a>
+        <a class="" href="../../clients/python/">Python</a>
         
     </li>
 
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../dotnet/">.Net</a>
+        <a class="" href="../../clients/ruby/">Ruby</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../clients/dotnet/">.Net</a>
         
     </li>
 
@@ -164,14 +170,14 @@
     
       
         
-          <li>Clients &raquo;</li>
+          <li>Getting Started &raquo;</li>
         
       
     
-    <li>Java</li>
+    <li>Installation</li>
     <li class="wy-breadcrumbs-aside">
       
-        <a href="https://github.com/SolidStateGroup/Bullet-Train-Docs/edit/master/docs/clients/java.md"
+        <a href="https://github.com/SolidStateGroup/Bullet-Train-Docs/edit/master/docs/gettingstarted/installation.md"
           class="icon icon-github"> Edit on GitHub</a>
       
     </li>
@@ -181,8 +187,25 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="java-client">Java Client</h1>
-<p>Coming soon.</p>
+                <h1 id="installation">Installation</h1>
+<p>Bullet Train consist of 3 components:</p>
+<ol>
+<li>The Server-Side REST API.</li>
+<li>The Front End Administration Web Interface.</li>
+<li>Client Libraries.</li>
+</ol>
+<p>To get up and running, you can either use <a href="https://bullet-train.io/">https://bullet-train.io/</a> for 1 and 2 above, or you can self host the API and Front End. This guide will get you set up self-hosting 1 and 2. Once you have these components up and running, you can add the client libraries to your apps and start managing your features remotely. </p>
+<h2 id="server-side-api">Server Side API</h2>
+<p>The source code can be found at <a href="https://github.com/SolidStateGroup/Bullet-Train-API">this GitHub project</a>. </p>
+<h2 id="front-end-website">Front End Website</h2>
+<p>The source code can be found at <a href="https://github.com/SolidStateGroup/Bullet-Train-Frontend">this GitHub project</a>. </p>
+<h2 id="client-libraries">Client Libraries</h2>
+<p>Once you are setup with the front and back end, you can integrate our client libraries with your apps. </p>
+<ul>
+<li><a href="clients/javascript.md">Javascript and React/React Native</a> </li>
+<li><a href="clients/node.md">NodeJS</a> </li>
+<li><a href="clients/java.md">Java</a> </li>
+</ul>
               
             </div>
           </div>
@@ -190,10 +213,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../python/" class="btn btn-neutral float-right" title="Python">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../hosted-service/" class="btn btn-neutral float-right" title="Hosted Service">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../node/" class="btn btn-neutral" title="Node"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../.." class="btn btn-neutral" title="Overview"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -221,10 +244,10 @@
           <a href="https://github.com/SolidStateGroup/Bullet-Train-Docs" class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
-        <span><a href="../node/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../.." style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../python/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../hosted-service/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
