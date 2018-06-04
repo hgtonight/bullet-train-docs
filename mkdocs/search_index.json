@@ -2,22 +2,27 @@
     "docs": [
         {
             "location": "/", 
-            "text": "Welcome to Bullet Train\n\n\nBullet Train lets you manage features across web, mobile and server side applications.\n\n\nThe application consist of 3 components:\n\n\n\n\nThe Server-Side REST API.\n\n\nThe Front End Administration Web Interface.\n\n\nClient Libraries.\n\n\n\n\nTo get up and running, you can either use \nhttps://bullet-train.io/\n for 1 and 2 above, or you can self host the API and Front End. This guide will get you set up self-hosting 1 and 2. Once you have these components up and running, you can add the client libraries to your apps and start managing your features remotely. \n\n\nServer Side API\n\n\nThe source code can be found at \nthis GitHub project\n. \n\n\nFront End Website\n\n\nThe source code can be found at \nthis GitHub project\n. \n\n\nClient Libraries\n\n\nOnce you are setup with the front and back end, you can integrate our client libraries with your apps. \n\n\n\n\nJavascript and React/React Native\n \n\n\nNodeJS\n \n\n\nJava\n \n\n\nPython\n \n\n\nRuby\n \n\n\n.Net\n \n\n\n\n\nFeatures\n\n\nRather than just a flag that can be turned on / off, features within Bullet Train are pieces of functionality that have an enabled state as well as a configurable value. This allows you to use Bullet Train in the following ways.\n\n\n\n\nShowing and hiding features in your application. E.g. Instant messaging within an application\n\n\nConfiguring values used within your application remotely. E.g. The number of power-ups a user might have in a game/\n\n\nConfiguring environment variables. E.g. Setting the database URL for your API.\n\n\n\n\nFeatures are created on a per project basis but edited per environment and can then be overridden on a per user basis. \n\n\nOrganisations\n\n\nOrganisations are a way for you and other team members to manage projects and their features. Users can be members of multiple organisations.\n\n\nProjects\n\n\nProjects contain one or more environments that share a single set of features and one or more environments. Organisations can have any number of projects.\n\n\nEnvironments\n\n\nEnvironments are a way to separate the configuration of your features. For example, your project's Development and Staging environments might have a feature configured as on while it is turned off in your Production environment. A project can have any number of environments. \n\n\nUsers\n\n\nUsers are a particular registration for one of your Project's environments, features can be overridden from your environment defaults. For example, joe@yourwebsite.com would be a different user in your development environment to the one in production.\n\n\nUsers are created from your client SDKs, generally you'd make a call to identify as user whenever they are logged into your website or whenever your API receives a request that requires checking for features.    \n\n\nSegments (\nComing soon\n)\n\n\nSegments are a way to define a group of users by traits such as number of times logged in, device, location or any number of custom defined traits.\n\n\nSimilarly to individual users, you will be able to override environment defaults for features. For example showing certain features for a \"power user\" segment.", 
+            "text": "Overview\n\n\nBullet Train lets you manage features across web, mobile and server side applications.\n\n\nThe application consist of 3 components:\n\n\n\n\nThe \nServer-Side REST API\n.\n\n\nThe \nFront End Administration Web Interface\n.\n\n\nClient Libraries.\n\n\n\n\nTo get up and running, you can either use \nhttps://bullet-train.io/\n for 1 and 2 above, or you can self host the API and Front End. Once you have these components up and running, you can add the client libraries to your apps and start managing your features remotely. \n\n\nInstallation\n\n\nServer Side API\n\n\nThe source code and installation instructions can be found at \nthe GitHub project\n. \n\n\nFront End Website\n\n\nThe source code and installation instructions can be found at \nthe GitHub project\n. \n\n\nClient Libraries\n\n\nOnce you are setup with the front and back end, you can integrate our client libraries with your apps. \n\n\n\n\nJavascript and React/React Native\n \n\n\nNodeJS\n \n\n\nJava\n \n\n\nPython\n \n\n\nRuby\n \n\n\n.Net\n \n\n\n\n\nFeatures\n\n\nRather than just a flag that can be turned on / off, features within Bullet Train are pieces of functionality that have an enabled state as well as a configurable value. This allows you to use Bullet Train in the following ways.\n\n\n\n\nShowing and hiding features in your application. E.g. Instant messaging within an application.\n\n\nConfiguring values used within your application remotely. E.g. The number of power-ups a user might have in a game.\n\n\nConfiguring environment variables. E.g. Setting the database URL for your API.\n\n\n\n\nFeatures are created on a per project basis but edited per environment and can then be overridden on a per user basis. \n\n\nOrganisations\n\n\nOrganisations are a way for you and other team members to manage projects and their features. Users can be members of multiple organisations.\n\n\nProjects\n\n\nProjects contain one or more environments that share a single set of features and one or more environments. Organisations can have any number of projects.\n\n\nEnvironments\n\n\nEnvironments are a way to separate the configuration of your features. For example, your project's Development and Staging environments might have a feature configured as on while it is turned off in your Production environment. A project can have any number of environments. \n\n\nUsers\n\n\nUsers are a particular registration for one of your Project's environments. Registering users within the client application allows you to manage features for individual users. User features can be overridden from your environment defaults. For example, joe@yourwebsite.com would be a different user in your development environment to the one in production, and they can have different features enabled for each environment.\n\n\nUsers are created from your client SDKs, generally you'd make a call to identify a user with a unique string/id whenever they are logged into your website or whenever your API receives a request that requires checking for features.    \n\n\nSegments (\nComing soon\n)\n\n\nSegments are a way to define a group of users by traits such as number of times logged in, device, location or any number of custom defined traits.\n\n\nSimilarly to individual users, you will be able to override environment defaults for features. For example showing certain features for a \"power user\" segment.", 
+            "title": "Overview and Install"
+        }, 
+        {
+            "location": "/#overview", 
+            "text": "Bullet Train lets you manage features across web, mobile and server side applications.  The application consist of 3 components:   The  Server-Side REST API .  The  Front End Administration Web Interface .  Client Libraries.   To get up and running, you can either use  https://bullet-train.io/  for 1 and 2 above, or you can self host the API and Front End. Once you have these components up and running, you can add the client libraries to your apps and start managing your features remotely.", 
             "title": "Overview"
         }, 
         {
-            "location": "/#welcome-to-bullet-train", 
-            "text": "Bullet Train lets you manage features across web, mobile and server side applications.  The application consist of 3 components:   The Server-Side REST API.  The Front End Administration Web Interface.  Client Libraries.   To get up and running, you can either use  https://bullet-train.io/  for 1 and 2 above, or you can self host the API and Front End. This guide will get you set up self-hosting 1 and 2. Once you have these components up and running, you can add the client libraries to your apps and start managing your features remotely.", 
-            "title": "Welcome to Bullet Train"
+            "location": "/#installation", 
+            "text": "", 
+            "title": "Installation"
         }, 
         {
             "location": "/#server-side-api", 
-            "text": "The source code can be found at  this GitHub project .", 
+            "text": "The source code and installation instructions can be found at  the GitHub project .", 
             "title": "Server Side API"
         }, 
         {
             "location": "/#front-end-website", 
-            "text": "The source code can be found at  this GitHub project .", 
+            "text": "The source code and installation instructions can be found at  the GitHub project .", 
             "title": "Front End Website"
         }, 
         {
@@ -27,7 +32,7 @@
         }, 
         {
             "location": "/#features", 
-            "text": "Rather than just a flag that can be turned on / off, features within Bullet Train are pieces of functionality that have an enabled state as well as a configurable value. This allows you to use Bullet Train in the following ways.   Showing and hiding features in your application. E.g. Instant messaging within an application  Configuring values used within your application remotely. E.g. The number of power-ups a user might have in a game/  Configuring environment variables. E.g. Setting the database URL for your API.   Features are created on a per project basis but edited per environment and can then be overridden on a per user basis.", 
+            "text": "Rather than just a flag that can be turned on / off, features within Bullet Train are pieces of functionality that have an enabled state as well as a configurable value. This allows you to use Bullet Train in the following ways.   Showing and hiding features in your application. E.g. Instant messaging within an application.  Configuring values used within your application remotely. E.g. The number of power-ups a user might have in a game.  Configuring environment variables. E.g. Setting the database URL for your API.   Features are created on a per project basis but edited per environment and can then be overridden on a per user basis.", 
             "title": "Features"
         }, 
         {
@@ -47,7 +52,7 @@
         }, 
         {
             "location": "/#users", 
-            "text": "Users are a particular registration for one of your Project's environments, features can be overridden from your environment defaults. For example, joe@yourwebsite.com would be a different user in your development environment to the one in production.  Users are created from your client SDKs, generally you'd make a call to identify as user whenever they are logged into your website or whenever your API receives a request that requires checking for features.", 
+            "text": "Users are a particular registration for one of your Project's environments. Registering users within the client application allows you to manage features for individual users. User features can be overridden from your environment defaults. For example, joe@yourwebsite.com would be a different user in your development environment to the one in production, and they can have different features enabled for each environment.  Users are created from your client SDKs, generally you'd make a call to identify a user with a unique string/id whenever they are logged into your website or whenever your API receives a request that requires checking for features.", 
             "title": "Users"
         }, 
         {
@@ -56,39 +61,24 @@
             "title": "Segments (Coming soon)"
         }, 
         {
-            "location": "/gettingstarted/installation/", 
-            "text": "Installation\n\n\nBullet Train consist of 3 components:\n\n\n\n\nThe Server-Side REST API.\n\n\nThe Front End Administration Web Interface.\n\n\nClient Libraries.\n\n\n\n\nTo get up and running, you can either use \nhttps://bullet-train.io/\n for 1 and 2 above, or you can self host the API and Front End. This guide will get you set up self-hosting 1 and 2. Once you have these components up and running, you can add the client libraries to your apps and start managing your features remotely. \n\n\nServer Side API\n\n\nThe source code can be found at \nthis GitHub project\n. \n\n\nFront End Website\n\n\nThe source code can be found at \nthis GitHub project\n. \n\n\nClient Libraries\n\n\nOnce you are setup with the front and back end, you can integrate our client libraries with your apps. \n\n\n\n\nJavascript and React/React Native\n \n\n\nNodeJS\n \n\n\nJava\n \n\n\nPython\n \n\n\nRuby\n \n\n\n.Net", 
-            "title": "Installation"
-        }, 
-        {
-            "location": "/gettingstarted/installation/#installation", 
-            "text": "Bullet Train consist of 3 components:   The Server-Side REST API.  The Front End Administration Web Interface.  Client Libraries.   To get up and running, you can either use  https://bullet-train.io/  for 1 and 2 above, or you can self host the API and Front End. This guide will get you set up self-hosting 1 and 2. Once you have these components up and running, you can add the client libraries to your apps and start managing your features remotely.", 
-            "title": "Installation"
-        }, 
-        {
-            "location": "/gettingstarted/installation/#server-side-api", 
-            "text": "The source code can be found at  this GitHub project .", 
-            "title": "Server Side API"
-        }, 
-        {
-            "location": "/gettingstarted/installation/#front-end-website", 
-            "text": "The source code can be found at  this GitHub project .", 
-            "title": "Front End Website"
-        }, 
-        {
-            "location": "/gettingstarted/installation/#client-libraries", 
-            "text": "Once you are setup with the front and back end, you can integrate our client libraries with your apps.    Javascript and React/React Native    NodeJS    Java    Python    Ruby    .Net", 
-            "title": "Client Libraries"
-        }, 
-        {
-            "location": "/gettingstarted/hosted-service/", 
+            "location": "/hosted-service/", 
             "text": "Hosted Service\n\n\nIf you would rather skip the hosting and jump straight to integrating Bullet Train with your own application, you can use \nhttps://bullet-train.io/\n right now. \n\n\nWe are going to be bringing paid plans to the service soon, with pricing to suit startups, not enterprise customers.\n\n\nIf you want to discuss hosting options, \nplease get in touch\n.", 
             "title": "Hosted Service"
         }, 
         {
-            "location": "/gettingstarted/hosted-service/#hosted-service", 
+            "location": "/hosted-service/#hosted-service", 
             "text": "If you would rather skip the hosting and jump straight to integrating Bullet Train with your own application, you can use  https://bullet-train.io/  right now.   We are going to be bringing paid plans to the service soon, with pricing to suit startups, not enterprise customers.  If you want to discuss hosting options,  please get in touch .", 
             "title": "Hosted Service"
+        }, 
+        {
+            "location": "/usage/managing-features/", 
+            "text": "Coming Soon", 
+            "title": "Managing Features"
+        }, 
+        {
+            "location": "/usage/managing-features/#coming-soon", 
+            "text": "", 
+            "title": "Coming Soon"
         }, 
         {
             "location": "/clients/javascript/", 
