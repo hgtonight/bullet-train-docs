@@ -55,84 +55,80 @@
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
 	<ul class="current">
+	  
           
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../..">Overview and Install</a>
-        
-    </li>
-<li>
+            <li class="toctree-l1">
+		
+    <a class="" href="../..">Overview and Install</a>
+	    </li>
           
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../../hosted-service/">Hosted Service</a>
-        
-    </li>
-<li>
+            <li class="toctree-l1">
+		
+    <a class="" href="../../hosted-service/">Hosted Service</a>
+	    </li>
           
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../../managing-features/">Managing Features</a>
-        
-    </li>
-<li>
+            <li class="toctree-l1">
+		
+    <a class="" href="../../managing-features/">Managing Features</a>
+	    </li>
           
-            <li>
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Client Libraries</span>
     <ul class="subnav">
-    <li><span>Client Libraries</span></li>
+                <li class="">
+                    
+    <a class="" href="../javascript/">Javascript/React Native</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">Node</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#getting-started">Getting Started</a></li>
+    
 
+    <li class="toctree-l3"><a href="#installing">Installing</a></li>
+    
+        <ul>
         
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../javascript/">Javascript/React Native</a>
+            <li><a class="toctree-l4" href="#via-npm">VIA npm</a></li>
         
-    </li>
+        </ul>
+    
 
-        
-            
-    <li class="toctree-l1 current">
-        <a class="current" href="./">Node</a>
-        
-            <ul>
-            
-                <li class="toctree-l3"><a href="#node-client">Node Client</a></li>
-                
-            
-            </ul>
-        
-    </li>
+    <li class="toctree-l3"><a href="#usage">Usage</a></li>
+    
 
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../java/">Java</a>
-        
-    </li>
+    <li class="toctree-l3"><a href="#contributing">Contributing</a></li>
+    
 
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../python/">Python</a>
-        
-    </li>
+    <li class="toctree-l3"><a href="#getting-help">Getting Help</a></li>
+    
 
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../ruby/">Ruby</a>
-        
-    </li>
+    <li class="toctree-l3"><a href="#get-in-touch">Get in touch</a></li>
+    
 
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../dotnet/">.Net</a>
-        
-    </li>
-
-        
     </ul>
-<li>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../java/">Java</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../python/">Python</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ruby/">Ruby</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../dotnet/">.Net</a>
+                </li>
+    </ul>
+	    </li>
           
         </ul>
       </div>
@@ -173,8 +169,132 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="node-client">Node Client</h1>
-<p>Coming soon.</p>
+                <p>The SDK clients for NodeJS <a href="https://www.bullet-train.io/">https://bullet-train.io/</a>. Bullet Train allows you to manage feature flags and remote config across multiple projects, environments and organisations.</p>
+<h2 id="getting-started">Getting Started</h2>
+<p>These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See running in production for notes on how to deploy the project on a live system.</p>
+<h2 id="installing">Installing</h2>
+<h3 id="via-npm">VIA npm</h3>
+<p><code>npm i bullet-train-nodejs --save</code></p>
+<h2 id="usage">Usage</h2>
+<p><strong>Retrieving feature flags for your project</strong></p>
+<p><strong>For full documentation visit <a href="https://docs.bullet-train.io">https://docs.bullet-train.io</a></strong></p>
+<pre><code class="javascript">var bulletTrain = require(&quot;bullet-train-nodejs&quot;);
+
+bulletTrain.init({
+    environmentID:&quot;&lt;YOUR_ENVIRONMENT_KEY&gt;&quot;
+    }
+});
+
+
+bulletTrain.hasFeature(&quot;header&quot;, '&lt;My User Id&gt;')
+.then((featureEnabled) =&gt; {
+    if (featureEnabled) {
+        //Show my awesome cool new feature to this one user
+    }
+});
+bulletTrain.hasFeature(&quot;header&quot;)
+.then((featureEnabled) =&gt; {
+    if (featureEnabled) {
+        //Show my awesome cool new feature to the world
+    }
+});
+
+bulletTrain.getValue(&quot;header&quot;, '&lt;My User Id')
+.then((value) =&gt; {
+    //Show some unique value to this user
+});
+
+bulletTrain.getValue(&quot;header&quot;)
+.then((value) =&gt; {
+    //Show a value to the world
+});
+</code></pre>
+
+<p><strong>Available Options</strong></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th align="center">Description</th>
+<th align="right">Required</th>
+<th align="right">Default Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>environmentID</code></td>
+<td align="center">Defines which project environment you wish to get flags for. <em>example ACME Project - Staging.</em></td>
+<td align="right"><strong>YES</strong></td>
+<td align="right">null</td>
+</tr>
+<tr>
+<td><code>onError</code></td>
+<td align="center">Callback function on failure to retrieve flags. <code>(error)=&gt;{...}</code></td>
+<td align="right"><strong>NO</strong></td>
+<td align="right">null</td>
+</tr>
+<tr>
+<td><code>defaultFlags</code></td>
+<td align="center">Defines the default flags if there are any</td>
+<td align="right"><strong>NO</strong></td>
+<td align="right">null</td>
+</tr>
+<tr>
+<td><code>api</code></td>
+<td align="center">Use this property to define where you're getting feature flags from, e.g. if you're self hosting.</td>
+<td align="right"><strong>NO</strong></td>
+<td align="right">https://bullet-train-api.dokku1.solidstategroup.com/api/v1/</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Available Functions</strong></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th align="center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>init</code></td>
+<td align="center">Initialise the sdk against a particular environment</td>
+</tr>
+<tr>
+<td><code>hasFeature(key)</code></td>
+<td align="center">Get the value of a particular feature e.g. <code>bulletTrain.hasFeature("powerUserFeature") // true</code></td>
+</tr>
+<tr>
+<td><code>hasFeature(key, userId)</code></td>
+<td align="center">Get the value of a particular feature for a user e.g. <code>bulletTrain.hasFeature("powerUserFeature", 1234) // true</code></td>
+</tr>
+<tr>
+<td><code>getValue(key)</code></td>
+<td align="center">Get the value of a particular feature e.g. <code>bulletTrain.getValue("font_size") // 10</code></td>
+</tr>
+<tr>
+<td><code>getValue(keym userId)</code></td>
+<td align="center">Get the value of a particular feature for a specificed user e.g. <code>bulletTrain.getValue("font_size", 1234) // 15</code></td>
+</tr>
+<tr>
+<td><code>getFlags()</code></td>
+<td align="center">Trigger a manual fetch of the environment features, if a user is identified it will fetch their features</td>
+</tr>
+<tr>
+<td><code>getFlagsForUser(1234)</code></td>
+<td align="center">Trigger a manual fetch of the environment features with a given user id</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Identifying users</strong></p>
+<p>Identifying users allows you to target specific users from the <a href="https://www.bullet-train.io/">Bullet Train dashboard</a>.
+You can include an optional user identifier as part of the <code>hasFeature</code> and <code>getValue</code> methods to retrieve unique user flags and variables.</p>
+<h2 id="contributing">Contributing</h2>
+<p>Please read <a href="https://gist.github.com/kyle-ssg/c36a03aebe492e45cbd3eefb21cb0486">CONTRIBUTING.md</a> for details on our code of conduct, and the process for submitting pull requests to us.</p>
+<h2 id="getting-help">Getting Help</h2>
+<p>If you encounter a bug or feature request we would like to hear about it. Before you submit an issue please search existing issues in order to prevent duplicates. </p>
+<h2 id="get-in-touch">Get in touch</h2>
+<p>If you have any questions about our projects you can email <a href="mailto:projects@solidstategroup.com">projects@solidstategroup.com</a>.</p>
               
             </div>
           </div>
@@ -199,18 +319,18 @@
 
   Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
 </footer>
-	  
+      
         </div>
       </div>
 
     </section>
-    
+
   </div>
 
   <div class="rst-versions" role="note" style="cursor: pointer">
     <span class="rst-current-version" data-toggle="rst-current-version">
       
-          <a href="https://github.com/SolidStateGroup/Bullet-Train-Docs" class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
+          <a href="https://github.com/SolidStateGroup/Bullet-Train-Docs/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
         <span><a href="../javascript/" style="color: #fcfcfc;">&laquo; Previous</a></span>
@@ -220,7 +340,10 @@
       
     </span>
 </div>
+    <script>var base_url = '../..';</script>
     <script src="../../js/theme.js"></script>
+      <script src="../../search/require.js"></script>
+      <script src="../../search/search.js"></script>
 
 </body>
 </html>

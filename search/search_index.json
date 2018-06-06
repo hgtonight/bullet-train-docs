@@ -107,13 +107,43 @@
         }, 
         {
             "location": "/clients/node/", 
-            "text": "Node Client\n\n\nComing soon.", 
+            "text": "The SDK clients for NodeJS \nhttps://bullet-train.io/\n. Bullet Train allows you to manage feature flags and remote config across multiple projects, environments and organisations.\n\n\nGetting Started\n\n\nThese instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See running in production for notes on how to deploy the project on a live system.\n\n\nInstalling\n\n\nVIA npm\n\n\nnpm i bullet-train-nodejs --save\n\n\nUsage\n\n\nRetrieving feature flags for your project\n\n\nFor full documentation visit \nhttps://docs.bullet-train.io\n\n\nvar bulletTrain = require(\nbullet-train-nodejs\n);\n\nbulletTrain.init({\n    environmentID:\nYOUR_ENVIRONMENT_KEY\n\n    }\n});\n\n\nbulletTrain.hasFeature(\nheader\n, '\nMy User Id\n')\n.then((featureEnabled) =\n {\n    if (featureEnabled) {\n        //Show my awesome cool new feature to this one user\n    }\n});\nbulletTrain.hasFeature(\nheader\n)\n.then((featureEnabled) =\n {\n    if (featureEnabled) {\n        //Show my awesome cool new feature to the world\n    }\n});\n\nbulletTrain.getValue(\nheader\n, '\nMy User Id')\n.then((value) =\n {\n    //Show some unique value to this user\n});\n\nbulletTrain.getValue(\nheader\n)\n.then((value) =\n {\n    //Show a value to the world\n});\n\n\n\n\nAvailable Options\n\n\n\n\n\n\n\n\nProperty\n\n\nDescription\n\n\nRequired\n\n\nDefault Value\n\n\n\n\n\n\n\n\n\n\nenvironmentID\n\n\nDefines which project environment you wish to get flags for. \nexample ACME Project - Staging.\n\n\nYES\n\n\nnull\n\n\n\n\n\n\nonError\n\n\nCallback function on failure to retrieve flags. \n(error)=\n{...}\n\n\nNO\n\n\nnull\n\n\n\n\n\n\ndefaultFlags\n\n\nDefines the default flags if there are any\n\n\nNO\n\n\nnull\n\n\n\n\n\n\napi\n\n\nUse this property to define where you're getting feature flags from, e.g. if you're self hosting.\n\n\nNO\n\n\nhttps://bullet-train-api.dokku1.solidstategroup.com/api/v1/\n\n\n\n\n\n\n\n\nAvailable Functions\n\n\n\n\n\n\n\n\nProperty\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\ninit\n\n\nInitialise the sdk against a particular environment\n\n\n\n\n\n\nhasFeature(key)\n\n\nGet the value of a particular feature e.g. \nbulletTrain.hasFeature(\"powerUserFeature\") // true\n\n\n\n\n\n\nhasFeature(key, userId)\n\n\nGet the value of a particular feature for a user e.g. \nbulletTrain.hasFeature(\"powerUserFeature\", 1234) // true\n\n\n\n\n\n\ngetValue(key)\n\n\nGet the value of a particular feature e.g. \nbulletTrain.getValue(\"font_size\") // 10\n\n\n\n\n\n\ngetValue(keym userId)\n\n\nGet the value of a particular feature for a specificed user e.g. \nbulletTrain.getValue(\"font_size\", 1234) // 15\n\n\n\n\n\n\ngetFlags()\n\n\nTrigger a manual fetch of the environment features, if a user is identified it will fetch their features\n\n\n\n\n\n\ngetFlagsForUser(1234)\n\n\nTrigger a manual fetch of the environment features with a given user id\n\n\n\n\n\n\n\n\nIdentifying users\n\n\nIdentifying users allows you to target specific users from the \nBullet Train dashboard\n.\nYou can include an optional user identifier as part of the \nhasFeature\n and \ngetValue\n methods to retrieve unique user flags and variables.\n\n\nContributing\n\n\nPlease read \nCONTRIBUTING.md\n for details on our code of conduct, and the process for submitting pull requests to us.\n\n\nGetting Help\n\n\nIf you encounter a bug or feature request we would like to hear about it. Before you submit an issue please search existing issues in order to prevent duplicates. \n\n\nGet in touch\n\n\nIf you have any questions about our projects you can email \nprojects@solidstategroup.com\n.", 
             "title": "Node"
         }, 
         {
-            "location": "/clients/node/#node-client", 
-            "text": "Coming soon.", 
-            "title": "Node Client"
+            "location": "/clients/node/#getting-started", 
+            "text": "These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See running in production for notes on how to deploy the project on a live system.", 
+            "title": "Getting Started"
+        }, 
+        {
+            "location": "/clients/node/#installing", 
+            "text": "", 
+            "title": "Installing"
+        }, 
+        {
+            "location": "/clients/node/#via-npm", 
+            "text": "npm i bullet-train-nodejs --save", 
+            "title": "VIA npm"
+        }, 
+        {
+            "location": "/clients/node/#usage", 
+            "text": "Retrieving feature flags for your project  For full documentation visit  https://docs.bullet-train.io  var bulletTrain = require( bullet-train-nodejs );\n\nbulletTrain.init({\n    environmentID: YOUR_ENVIRONMENT_KEY \n    }\n});\n\n\nbulletTrain.hasFeature( header , ' My User Id ')\n.then((featureEnabled) =  {\n    if (featureEnabled) {\n        //Show my awesome cool new feature to this one user\n    }\n});\nbulletTrain.hasFeature( header )\n.then((featureEnabled) =  {\n    if (featureEnabled) {\n        //Show my awesome cool new feature to the world\n    }\n});\n\nbulletTrain.getValue( header , ' My User Id')\n.then((value) =  {\n    //Show some unique value to this user\n});\n\nbulletTrain.getValue( header )\n.then((value) =  {\n    //Show a value to the world\n});  Available Options     Property  Description  Required  Default Value      environmentID  Defines which project environment you wish to get flags for.  example ACME Project - Staging.  YES  null    onError  Callback function on failure to retrieve flags.  (error)= {...}  NO  null    defaultFlags  Defines the default flags if there are any  NO  null    api  Use this property to define where you're getting feature flags from, e.g. if you're self hosting.  NO  https://bullet-train-api.dokku1.solidstategroup.com/api/v1/     Available Functions     Property  Description      init  Initialise the sdk against a particular environment    hasFeature(key)  Get the value of a particular feature e.g.  bulletTrain.hasFeature(\"powerUserFeature\") // true    hasFeature(key, userId)  Get the value of a particular feature for a user e.g.  bulletTrain.hasFeature(\"powerUserFeature\", 1234) // true    getValue(key)  Get the value of a particular feature e.g.  bulletTrain.getValue(\"font_size\") // 10    getValue(keym userId)  Get the value of a particular feature for a specificed user e.g.  bulletTrain.getValue(\"font_size\", 1234) // 15    getFlags()  Trigger a manual fetch of the environment features, if a user is identified it will fetch their features    getFlagsForUser(1234)  Trigger a manual fetch of the environment features with a given user id     Identifying users  Identifying users allows you to target specific users from the  Bullet Train dashboard .\nYou can include an optional user identifier as part of the  hasFeature  and  getValue  methods to retrieve unique user flags and variables.", 
+            "title": "Usage"
+        }, 
+        {
+            "location": "/clients/node/#contributing", 
+            "text": "Please read  CONTRIBUTING.md  for details on our code of conduct, and the process for submitting pull requests to us.", 
+            "title": "Contributing"
+        }, 
+        {
+            "location": "/clients/node/#getting-help", 
+            "text": "If you encounter a bug or feature request we would like to hear about it. Before you submit an issue please search existing issues in order to prevent duplicates.", 
+            "title": "Getting Help"
+        }, 
+        {
+            "location": "/clients/node/#get-in-touch", 
+            "text": "If you have any questions about our projects you can email  projects@solidstategroup.com .", 
+            "title": "Get in touch"
         }, 
         {
             "location": "/clients/java/", 
