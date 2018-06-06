@@ -89,7 +89,23 @@
     <a class="current" href="./">Java</a>
     <ul class="subnav">
             
-    <li class="toctree-l3"><a href="#java-client">Java Client</a></li>
+    <li class="toctree-l3"><a href="#bullet-train-sdk-for-java">Bullet Train SDK for Java</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#getting-started">Getting Started</a></li>
+        
+            <li><a class="toctree-l4" href="#quick-setup">Quick Setup</a></li>
+        
+            <li><a class="toctree-l4" href="#usage">Usage</a></li>
+        
+            <li><a class="toctree-l4" href="#contributing">Contributing</a></li>
+        
+            <li><a class="toctree-l4" href="#getting-help">Getting Help</a></li>
+        
+            <li><a class="toctree-l4" href="#get-in-touch">Get in touch</a></li>
+        
+        </ul>
     
 
     </ul>
@@ -148,8 +164,91 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="java-client">Java Client</h1>
-<p>Coming soon.</p>
+                <h1 id="bullet-train-sdk-for-java">Bullet Train SDK for Java</h1>
+<blockquote>
+<p>Bullet Train allows you to manage feature flags and remote config across multiple projects, environments and organisations.</p>
+</blockquote>
+<p>The SDK for Android and Java applications for <a href="https://bullet-train.io/">https://bullet-train.io/</a>.</p>
+<h2 id="getting-started">Getting Started</h2>
+<h2 id="quick-setup">Quick Setup</h2>
+<p>Before adding maven dependency to your local environment please follow these instruction first:</p>
+<ul>
+<li>download source code from github</li>
+</ul>
+<pre><code class="ssh">git clone git@github.com:SolidStateGroup/bullet-train-java-client.git
+cd bullet-train-java-client
+</code></pre>
+
+<ul>
+<li>run mvn command to install jar into your local maven repository</li>
+</ul>
+<pre><code class="ssh">mvn clean install -DskipTests
+</code></pre>
+
+<p>Now you can use below steps to add client to your project.</p>
+<h3 id="maven">Maven</h3>
+<p>Add following dependencies to your project in <code>pom.xml</code></p>
+<pre><code class="xml">&lt;dependency&gt;
+  &lt;groupId&gt;com.ssg&lt;/groupId&gt;
+  &lt;artifactId&gt;bullet-train-client&lt;/artifactId&gt;
+  &lt;version&gt;1.0&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre>
+
+<h3 id="gradle">Gradle</h3>
+<pre><code class="groovy">implementation 'com.ssg:bullet-train-client:1.0'
+</code></pre>
+
+<h2 id="usage">Usage</h2>
+<p><strong>Retrieving feature flags for your project</strong></p>
+<p><strong>For full documentation visit <a href="https://www.bullet-train.io/documentation">https://bullet-train.io/documentation</a></strong></p>
+<p>Sign Up and create account at <a href="https://www.bullet-train.io/">https://bullet-train.io/</a></p>
+<p>In your application initialise BulletTrain client with your API key</p>
+<pre><code class="java">BulletTrainClient bulletClient = BulletTrainClient.newBuilder()
+                .setApiKey(&quot;YOUR_ENV_API_KEY&quot;)
+                .build();
+</code></pre>
+
+<p>To check if feature flag exist and enabled:</p>
+<pre><code class="java">boolean featureEnabled = bulletClient.hasFeatureFlag(&quot;my_test_feature&quot;);
+if (featureEnabled) {
+    // run the code to execute enabled feature
+} else {
+    // run the code if feature switched off
+}
+</code></pre>
+
+<p>To get configuration value for feature flag:</p>
+<pre><code class="java">boolean featureEnabled = bulletClient.hasFeatureFlag(&quot;my_test_feature&quot;);
+if (featureEnabled) {
+    String myRemoteConfig = bulletClient.getFeatureFlagValue(&quot;my_test_feature&quot;);
+    // run the code for to execute enabled feature
+} else {
+    // run the code if feature switched off
+}
+</code></pre>
+
+<p><strong>Identifying users</strong></p>
+<p>Identifying users allows you to target specific users from the <a href="https://www.bullet-train.io/">Bullet Train dashboard</a>.</p>
+<p>To check if feature exist for given user context:</p>
+<pre><code class="java">User user = new User();
+user.setIdentifier(&quot;bullet_train_sample_user&quot;);
+
+boolean featureEnabled = bulletClient.hasFeatureFlag(&quot;my_test_feature&quot;, user);
+if (featureEnabled) {
+    String myRemoteConfig = bulletClient.getFeatureFlagValue(&quot;my_test_feature&quot;, user);
+    // run the code for to execute enabled feature for given user
+} else {
+    // run the code if feature switched off
+}
+</code></pre>
+
+<h2 id="contributing">Contributing</h2>
+<p>Please read <a href="https://gist.github.com/kyle-ssg/c36a03aebe492e45cbd3eefb21cb0486">CONTRIBUTING.md</a> for details on our code of conduct, and the process for submitting pull requests to us.</p>
+<h2 id="getting-help">Getting Help</h2>
+<p>If you encounter a bug or feature request we would like to hear about it. Before you submit an issue please search existing issues in order to prevent duplicates. </p>
+<h2 id="get-in-touch">Get in touch</h2>
+<p>If you have any questions about our projects you can email <a href="mailto:bullettrain@solidstategroup.com">bullettrain@solidstategroup.com</a>.</p>
               
             </div>
           </div>
