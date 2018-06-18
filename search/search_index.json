@@ -202,13 +202,48 @@
         }, 
         {
             "location": "/clients/ruby/", 
-            "text": "Coming Soon", 
+            "text": "Bullet Train Client\n\n\nThe SDK clients for Ruby \nhttps://bullet-train.io/\n. Bullet Train allows you to manage feature flags and remote config across multiple projects, environments and organisations.\n\n\nGetting Started\n\n\nThese instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See running in production for notes on how to deploy the project on a live system.\n\n\nInstalling\n\n\nVIA gem\n\n\ngem install bullet-train-client\n\n\nUsage\n\n\nRetrieving feature flags for your project\n\n\nFor full documentation visit \nhttps://docs.bullet-train.io\n\n\nrequire \nbullet-train-ruby-client\n\n\nbt = BulletTrain.new(\nYour API KEY\n)\n\nif bt.getValue(\nfont_size\n)\n  #    Do something awesome with the font size\nend\n\nif bt.hasFeature(\ndoes_not_exist\n)\n  #do something\nelse\n  #do nothing, or something else\nend\n\n\n\n\n\nAvailable Options\n\n\n\n\n\n\n\n\nProperty\n\n\nDescription\n\n\nRequired\n\n\nDefault Value\n\n\n\n\n\n\n\n\n\n\nenvironmentID\n\n\nDefines which project environment you wish to get flags for. \nexample ACME Project - Staging.\n\n\nYES\n\n\nnull\n\n\n\n\n\n\nonError\n\n\nCallback function on failure to retrieve flags. \n(error)=\n{...}\n\n\nNO\n\n\nnull\n\n\n\n\n\n\ndefaultFlags\n\n\nDefines the default flags if there are any\n\n\nNO\n\n\nnull\n\n\n\n\n\n\napi\n\n\nUse this property to define where you're getting feature flags from, e.g. if you're self hosting.\n\n\nNO\n\n\nhttps://bullet-train-api.dokku1.solidstategroup.com/api/v1/\n\n\n\n\n\n\n\n\nAvailable Functions\n\n\n\n\n\n\n\n\nProperty\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\ninit\n\n\nInitialise the sdk against a particular environment\n\n\n\n\n\n\nhasFeature(key)\n\n\nGet the value of a particular feature e.g. \nbulletTrain.hasFeature(\"powerUserFeature\") // true\n\n\n\n\n\n\nhasFeature(key, userId)\n\n\nGet the value of a particular feature for a user e.g. \nbulletTrain.hasFeature(\"powerUserFeature\", 1234) // true\n\n\n\n\n\n\ngetValue(key)\n\n\nGet the value of a particular feature e.g. \nbulletTrain.getValue(\"font_size\") // 10\n\n\n\n\n\n\ngetValue(keym userId)\n\n\nGet the value of a particular feature for a specificed user e.g. \nbulletTrain.getValue(\"font_size\", 1234) // 15\n\n\n\n\n\n\ngetFlags()\n\n\nTrigger a manual fetch of the environment features, if a user is identified it will fetch their features\n\n\n\n\n\n\ngetFlagsForUser(1234)\n\n\nTrigger a manual fetch of the environment features with a given user id\n\n\n\n\n\n\n\n\nIdentifying users\n\n\nIdentifying users allows you to target specific users from the \nBullet Train dashboard\n.\nYou can include an optional user identifier as part of the \nhasFeature\n and \ngetValue\n methods to retrieve unique user flags and variables.\n\n\nContributing\n\n\nPlease read \nCONTRIBUTING.md\n for details on our code of conduct, and the process for submitting pull requests to us.\n\n\nGetting Help\n\n\nIf you encounter a bug or feature request we would like to hear about it. Before you submit an issue please search existing issues in order to prevent duplicates. \n\n\nGet in touch\n\n\nIf you have any questions about our projects you can email \nprojects@solidstategroup.com\n.", 
             "title": "Ruby"
         }, 
         {
-            "location": "/clients/ruby/#coming-soon", 
+            "location": "/clients/ruby/#bullet-train-client", 
+            "text": "The SDK clients for Ruby  https://bullet-train.io/ . Bullet Train allows you to manage feature flags and remote config across multiple projects, environments and organisations.", 
+            "title": "Bullet Train Client"
+        }, 
+        {
+            "location": "/clients/ruby/#getting-started", 
+            "text": "These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See running in production for notes on how to deploy the project on a live system.", 
+            "title": "Getting Started"
+        }, 
+        {
+            "location": "/clients/ruby/#installing", 
             "text": "", 
-            "title": "Coming Soon"
+            "title": "Installing"
+        }, 
+        {
+            "location": "/clients/ruby/#via-gem", 
+            "text": "gem install bullet-train-client", 
+            "title": "VIA gem"
+        }, 
+        {
+            "location": "/clients/ruby/#usage", 
+            "text": "Retrieving feature flags for your project  For full documentation visit  https://docs.bullet-train.io  require  bullet-train-ruby-client \n\nbt = BulletTrain.new( Your API KEY )\n\nif bt.getValue( font_size )\n  #    Do something awesome with the font size\nend\n\nif bt.hasFeature( does_not_exist )\n  #do something\nelse\n  #do nothing, or something else\nend  Available Options     Property  Description  Required  Default Value      environmentID  Defines which project environment you wish to get flags for.  example ACME Project - Staging.  YES  null    onError  Callback function on failure to retrieve flags.  (error)= {...}  NO  null    defaultFlags  Defines the default flags if there are any  NO  null    api  Use this property to define where you're getting feature flags from, e.g. if you're self hosting.  NO  https://bullet-train-api.dokku1.solidstategroup.com/api/v1/     Available Functions     Property  Description      init  Initialise the sdk against a particular environment    hasFeature(key)  Get the value of a particular feature e.g.  bulletTrain.hasFeature(\"powerUserFeature\") // true    hasFeature(key, userId)  Get the value of a particular feature for a user e.g.  bulletTrain.hasFeature(\"powerUserFeature\", 1234) // true    getValue(key)  Get the value of a particular feature e.g.  bulletTrain.getValue(\"font_size\") // 10    getValue(keym userId)  Get the value of a particular feature for a specificed user e.g.  bulletTrain.getValue(\"font_size\", 1234) // 15    getFlags()  Trigger a manual fetch of the environment features, if a user is identified it will fetch their features    getFlagsForUser(1234)  Trigger a manual fetch of the environment features with a given user id     Identifying users  Identifying users allows you to target specific users from the  Bullet Train dashboard .\nYou can include an optional user identifier as part of the  hasFeature  and  getValue  methods to retrieve unique user flags and variables.", 
+            "title": "Usage"
+        }, 
+        {
+            "location": "/clients/ruby/#contributing", 
+            "text": "Please read  CONTRIBUTING.md  for details on our code of conduct, and the process for submitting pull requests to us.", 
+            "title": "Contributing"
+        }, 
+        {
+            "location": "/clients/ruby/#getting-help", 
+            "text": "If you encounter a bug or feature request we would like to hear about it. Before you submit an issue please search existing issues in order to prevent duplicates.", 
+            "title": "Getting Help"
+        }, 
+        {
+            "location": "/clients/ruby/#get-in-touch", 
+            "text": "If you have any questions about our projects you can email  projects@solidstategroup.com .", 
+            "title": "Get in touch"
         }, 
         {
             "location": "/clients/dotnet/", 

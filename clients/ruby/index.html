@@ -97,7 +97,23 @@
     <a class="current" href="./">Ruby</a>
     <ul class="subnav">
             
-    <li class="toctree-l3"><a href="#coming-soon">Coming Soon</a></li>
+    <li class="toctree-l3"><a href="#bullet-train-client">Bullet Train Client</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#getting-started">Getting Started</a></li>
+        
+            <li><a class="toctree-l4" href="#installing">Installing</a></li>
+        
+            <li><a class="toctree-l4" href="#usage">Usage</a></li>
+        
+            <li><a class="toctree-l4" href="#contributing">Contributing</a></li>
+        
+            <li><a class="toctree-l4" href="#getting-help">Getting Help</a></li>
+        
+            <li><a class="toctree-l4" href="#get-in-touch">Get in touch</a></li>
+        
+        </ul>
     
 
     </ul>
@@ -148,7 +164,118 @@
           <div role="main">
             <div class="section">
               
-                <h2 id="coming-soon">Coming Soon</h2>
+                <p><img width="100%" src="https://raw.githubusercontent.com/SolidStateGroup/bullet-train-frontend/master/hero.png"/></p>
+<h1 id="bullet-train-client">Bullet Train Client</h1>
+<p>The SDK clients for Ruby <a href="https://www.bullet-train.io/">https://bullet-train.io/</a>. Bullet Train allows you to manage feature flags and remote config across multiple projects, environments and organisations.</p>
+<h2 id="getting-started">Getting Started</h2>
+<p>These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See running in production for notes on how to deploy the project on a live system.</p>
+<h2 id="installing">Installing</h2>
+<h3 id="via-gem">VIA gem</h3>
+<p><code>gem install bullet-train-client</code></p>
+<h2 id="usage">Usage</h2>
+<p><strong>Retrieving feature flags for your project</strong></p>
+<p><strong>For full documentation visit <a href="https://docs.bullet-train.io">https://docs.bullet-train.io</a></strong></p>
+<pre><code class="ruby">require &quot;bullet-train-ruby-client&quot;
+
+bt = BulletTrain.new(&lt;&lt;Your API KEY&gt;&gt;&quot;)
+
+if bt.getValue(&quot;font_size&quot;)
+  #    Do something awesome with the font size
+end
+
+if bt.hasFeature(&quot;does_not_exist&quot;)
+  #do something
+else
+  #do nothing, or something else
+end
+
+</code></pre>
+
+<p><strong>Available Options</strong></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th align="center">Description</th>
+<th align="right">Required</th>
+<th align="right">Default Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>environmentID</code></td>
+<td align="center">Defines which project environment you wish to get flags for. <em>example ACME Project - Staging.</em></td>
+<td align="right"><strong>YES</strong></td>
+<td align="right">null</td>
+</tr>
+<tr>
+<td><code>onError</code></td>
+<td align="center">Callback function on failure to retrieve flags. <code>(error)=&gt;{...}</code></td>
+<td align="right"><strong>NO</strong></td>
+<td align="right">null</td>
+</tr>
+<tr>
+<td><code>defaultFlags</code></td>
+<td align="center">Defines the default flags if there are any</td>
+<td align="right"><strong>NO</strong></td>
+<td align="right">null</td>
+</tr>
+<tr>
+<td><code>api</code></td>
+<td align="center">Use this property to define where you're getting feature flags from, e.g. if you're self hosting.</td>
+<td align="right"><strong>NO</strong></td>
+<td align="right">https://bullet-train-api.dokku1.solidstategroup.com/api/v1/</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Available Functions</strong></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th align="center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>init</code></td>
+<td align="center">Initialise the sdk against a particular environment</td>
+</tr>
+<tr>
+<td><code>hasFeature(key)</code></td>
+<td align="center">Get the value of a particular feature e.g. <code>bulletTrain.hasFeature("powerUserFeature") // true</code></td>
+</tr>
+<tr>
+<td><code>hasFeature(key, userId)</code></td>
+<td align="center">Get the value of a particular feature for a user e.g. <code>bulletTrain.hasFeature("powerUserFeature", 1234) // true</code></td>
+</tr>
+<tr>
+<td><code>getValue(key)</code></td>
+<td align="center">Get the value of a particular feature e.g. <code>bulletTrain.getValue("font_size") // 10</code></td>
+</tr>
+<tr>
+<td><code>getValue(keym userId)</code></td>
+<td align="center">Get the value of a particular feature for a specificed user e.g. <code>bulletTrain.getValue("font_size", 1234) // 15</code></td>
+</tr>
+<tr>
+<td><code>getFlags()</code></td>
+<td align="center">Trigger a manual fetch of the environment features, if a user is identified it will fetch their features</td>
+</tr>
+<tr>
+<td><code>getFlagsForUser(1234)</code></td>
+<td align="center">Trigger a manual fetch of the environment features with a given user id</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Identifying users</strong></p>
+<p>Identifying users allows you to target specific users from the <a href="https://www.bullet-train.io/">Bullet Train dashboard</a>.
+You can include an optional user identifier as part of the <code>hasFeature</code> and <code>getValue</code> methods to retrieve unique user flags and variables.</p>
+<h2 id="contributing">Contributing</h2>
+<p>Please read <a href="https://gist.github.com/kyle-ssg/c36a03aebe492e45cbd3eefb21cb0486">CONTRIBUTING.md</a> for details on our code of conduct, and the process for submitting pull requests to us.</p>
+<h2 id="getting-help">Getting Help</h2>
+<p>If you encounter a bug or feature request we would like to hear about it. Before you submit an issue please search existing issues in order to prevent duplicates. </p>
+<h2 id="get-in-touch">Get in touch</h2>
+<p>If you have any questions about our projects you can email <a href="mailto:projects@solidstategroup.com">projects@solidstategroup.com</a>.</p>
               
             </div>
           </div>
