@@ -93,7 +93,28 @@
     <a class="current" href="./">Python</a>
     <ul class="subnav">
             
-    <li class="toctree-l3"><a href="#coming-soon">Coming Soon</a></li>
+    <li class="toctree-l3"><a href="#getting-started">Getting Started</a></li>
+    
+
+    <li class="toctree-l3"><a href="#installing">Installing</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#via-pip">VIA pip</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l3"><a href="#usage">Usage</a></li>
+    
+
+    <li class="toctree-l3"><a href="#contributing">Contributing</a></li>
+    
+
+    <li class="toctree-l3"><a href="#getting-help">Getting Help</a></li>
+    
+
+    <li class="toctree-l3"><a href="#get-in-touch">Get in touch</a></li>
     
 
     </ul>
@@ -148,7 +169,187 @@
           <div role="main">
             <div class="section">
               
-                <h2 id="coming-soon">Coming Soon</h2>
+                <p>This library can be used with server-side Python projects. The source code for the client is available on <a href="https://github.com/SolidStateGroup/bullet-train-python-client">Github</a>.</p>
+<h2 id="getting-started">Getting Started</h2>
+<p>These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See running in production for notes on how to deploy the project on a live system.</p>
+<h2 id="installing">Installing</h2>
+<h3 id="via-pip">VIA pip</h3>
+<pre><code>pip install bullet-train
+</code></pre>
+
+<h2 id="usage">Usage</h2>
+<p><strong>Retrieving feature flags for your project</strong></p>
+<p><strong>For full documentation visit <a href="https://docs.bullet-train.io">https://docs.bullet-train.io</a></strong></p>
+<pre><code class="python">from bullet_train import BulletTrain;
+
+bt = BulletTrain(environment_id=&quot;&lt;YOUR_ENVIRONMENT_KEY&gt;&quot;)
+
+if bt.has_feature(&quot;header&quot;, '&lt;My User Id&gt;'):
+  if bt.feature_enabled(&quot;header&quot;):
+    # Show my awesome cool new feature to the world
+
+if bt.has_feature(&quot;header&quot;):
+  if bt.feature_enabled(&quot;header&quot;):
+    # Show my awesome cool new feature to the world
+
+value = bt.get_value(&quot;header&quot;, '&lt;My User Id&gt;')
+
+value = bt.get_value(&quot;header&quot;)
+</code></pre>
+
+<p><strong>Available Options</strong></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th align="left">Description</th>
+<th align="right">Required</th>
+<th align="right">Default Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>environment_id</code></td>
+<td align="left">Defines which project environment you wish to get flags for. <em>example ACME Project - Staging.</em></td>
+<td align="right"><strong>YES</strong></td>
+<td align="right">None</td>
+</tr>
+<tr>
+<td><code>api</code></td>
+<td align="left">Use this property to define where you're getting feature flags from, e.g. if you're self hosting.</td>
+<td align="right"><strong>NO</strong></td>
+<td align="right">https://api.bullet-train.io/api/</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Available Functions</strong></p>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th align="center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>has_feature(key)</code></td>
+<td align="center">Get the value of a particular feature e.g. <code>bt.has_feature("powerUserFeature") // true</code></td>
+</tr>
+<tr>
+<td><code>has_feature(key, user_id)</code></td>
+<td align="center">Get the value of a particular feature for a user e.g. <code>bt.has_feature("powerUserFeature", 1234) // true</code></td>
+</tr>
+<tr>
+<td><code>get_value(key)</code></td>
+<td align="center">Get the value of a particular feature e.g. <code>bt.get_value("font_size") // 10</code></td>
+</tr>
+<tr>
+<td><code>get_value(key, userId)</code></td>
+<td align="center">Get the value of a particular feature for a specified user e.g. <code>bt.get_value("font_size", 1234) // 15</code></td>
+</tr>
+<tr>
+<td><code>get_flags()</code></td>
+<td align="center">Trigger a manual fetch of the environment features, returns a list of flag objects, see below for returned data</td>
+</tr>
+<tr>
+<td><code>get_flags_for_user(1234)</code></td>
+<td align="center">Trigger a manual fetch of the environment features with a given user id, returns a list of flag objects, see below for returned data</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Identifying users</strong></p>
+<p>Identifying users allows you to target specific users from the <a href="https://www.bullet-train.io/">Bullet Train dashboard</a>.
+You can include an optional user identifier as part of the <code>has_feature</code> and <code>get_value</code> methods to retrieve unique user flags and variables.</p>
+<p><strong>Flags data structure</strong></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>Internal id of feature state</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>enabled</td>
+<td>Whether feature is enabled or not</td>
+<td>Boolean</td>
+</tr>
+<tr>
+<td>environment</td>
+<td>Internal ID of environment</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>feature_state_value</td>
+<td>Value of the feature</td>
+<td>Any - determined based on data input on <a href="https://bullet-train.io">bullet-train.io</a>.</td>
+</tr>
+<tr>
+<td>feature</td>
+<td>Feature object - see below for details</td>
+<td>Object</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feature data structure</strong></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>Internal id of feature</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>name</td>
+<td>Name of the feature (sometimes referred to as key or ID)</td>
+<td>String</td>
+</tr>
+<tr>
+<td>description</td>
+<td>Description of the feature</td>
+<td>String</td>
+</tr>
+<tr>
+<td>type</td>
+<td>Feature Type. Can be FLAG or CONFIG</td>
+<td>String</td>
+</tr>
+<tr>
+<td>created_date</td>
+<td>Date feature was created</td>
+<td>Datetime</td>
+</tr>
+<tr>
+<td>inital_value</td>
+<td>The initial / default value set for all feature states on creation</td>
+<td>String</td>
+</tr>
+<tr>
+<td>project</td>
+<td>Internal ID of the associated project</td>
+<td>Integer</td>
+</tr>
+</tbody>
+</table>
+<h2 id="contributing">Contributing</h2>
+<p>Please read <a href="https://gist.github.com/kyle-ssg/c36a03aebe492e45cbd3eefb21cb0486">CONTRIBUTING.md</a> for details on our code of conduct, and the process for submitting pull requests to us.</p>
+<h2 id="getting-help">Getting Help</h2>
+<p>If you encounter a bug or feature request we would like to hear about it. Before you submit an issue please search existing issues in order to prevent duplicates. </p>
+<h2 id="get-in-touch">Get in touch</h2>
+<p>If you have any questions about our projects you can email <a href="mailto:projects@solidstategroup.com">projects@solidstategroup.com</a>.</p>
               
             </div>
           </div>

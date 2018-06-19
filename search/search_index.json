@@ -192,13 +192,43 @@
         }, 
         {
             "location": "/clients/python/", 
-            "text": "Coming Soon", 
+            "text": "This library can be used with server-side Python projects. The source code for the client is available on \nGithub\n.\n\n\nGetting Started\n\n\nThese instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See running in production for notes on how to deploy the project on a live system.\n\n\nInstalling\n\n\nVIA pip\n\n\npip install bullet-train\n\n\n\n\nUsage\n\n\nRetrieving feature flags for your project\n\n\nFor full documentation visit \nhttps://docs.bullet-train.io\n\n\nfrom bullet_train import BulletTrain;\n\nbt = BulletTrain(environment_id=\nYOUR_ENVIRONMENT_KEY\n)\n\nif bt.has_feature(\nheader\n, '\nMy User Id\n'):\n  if bt.feature_enabled(\nheader\n):\n    # Show my awesome cool new feature to the world\n\nif bt.has_feature(\nheader\n):\n  if bt.feature_enabled(\nheader\n):\n    # Show my awesome cool new feature to the world\n\nvalue = bt.get_value(\nheader\n, '\nMy User Id\n')\n\nvalue = bt.get_value(\nheader\n)\n\n\n\n\nAvailable Options\n\n\n\n\n\n\n\n\nProperty\n\n\nDescription\n\n\nRequired\n\n\nDefault Value\n\n\n\n\n\n\n\n\n\n\nenvironment_id\n\n\nDefines which project environment you wish to get flags for. \nexample ACME Project - Staging.\n\n\nYES\n\n\nNone\n\n\n\n\n\n\napi\n\n\nUse this property to define where you're getting feature flags from, e.g. if you're self hosting.\n\n\nNO\n\n\nhttps://api.bullet-train.io/api/\n\n\n\n\n\n\n\n\nAvailable Functions\n\n\n\n\n\n\n\n\nFunction\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nhas_feature(key)\n\n\nGet the value of a particular feature e.g. \nbt.has_feature(\"powerUserFeature\") // true\n\n\n\n\n\n\nhas_feature(key, user_id)\n\n\nGet the value of a particular feature for a user e.g. \nbt.has_feature(\"powerUserFeature\", 1234) // true\n\n\n\n\n\n\nget_value(key)\n\n\nGet the value of a particular feature e.g. \nbt.get_value(\"font_size\") // 10\n\n\n\n\n\n\nget_value(key, userId)\n\n\nGet the value of a particular feature for a specified user e.g. \nbt.get_value(\"font_size\", 1234) // 15\n\n\n\n\n\n\nget_flags()\n\n\nTrigger a manual fetch of the environment features, returns a list of flag objects, see below for returned data\n\n\n\n\n\n\nget_flags_for_user(1234)\n\n\nTrigger a manual fetch of the environment features with a given user id, returns a list of flag objects, see below for returned data\n\n\n\n\n\n\n\n\nIdentifying users\n\n\nIdentifying users allows you to target specific users from the \nBullet Train dashboard\n.\nYou can include an optional user identifier as part of the \nhas_feature\n and \nget_value\n methods to retrieve unique user flags and variables.\n\n\nFlags data structure\n\n\n\n\n\n\n\n\nField\n\n\nDescription\n\n\nType\n\n\n\n\n\n\n\n\n\n\nid\n\n\nInternal id of feature state\n\n\nInteger\n\n\n\n\n\n\nenabled\n\n\nWhether feature is enabled or not\n\n\nBoolean\n\n\n\n\n\n\nenvironment\n\n\nInternal ID of environment\n\n\nInteger\n\n\n\n\n\n\nfeature_state_value\n\n\nValue of the feature\n\n\nAny - determined based on data input on \nbullet-train.io\n.\n\n\n\n\n\n\nfeature\n\n\nFeature object - see below for details\n\n\nObject\n\n\n\n\n\n\n\n\nFeature data structure\n\n\n\n\n\n\n\n\nField\n\n\nDescription\n\n\nType\n\n\n\n\n\n\n\n\n\n\nid\n\n\nInternal id of feature\n\n\nInteger\n\n\n\n\n\n\nname\n\n\nName of the feature (sometimes referred to as key or ID)\n\n\nString\n\n\n\n\n\n\ndescription\n\n\nDescription of the feature\n\n\nString\n\n\n\n\n\n\ntype\n\n\nFeature Type. Can be FLAG or CONFIG\n\n\nString\n\n\n\n\n\n\ncreated_date\n\n\nDate feature was created\n\n\nDatetime\n\n\n\n\n\n\ninital_value\n\n\nThe initial / default value set for all feature states on creation\n\n\nString\n\n\n\n\n\n\nproject\n\n\nInternal ID of the associated project\n\n\nInteger\n\n\n\n\n\n\n\n\nContributing\n\n\nPlease read \nCONTRIBUTING.md\n for details on our code of conduct, and the process for submitting pull requests to us.\n\n\nGetting Help\n\n\nIf you encounter a bug or feature request we would like to hear about it. Before you submit an issue please search existing issues in order to prevent duplicates. \n\n\nGet in touch\n\n\nIf you have any questions about our projects you can email \nprojects@solidstategroup.com\n.", 
             "title": "Python"
         }, 
         {
-            "location": "/clients/python/#coming-soon", 
+            "location": "/clients/python/#getting-started", 
+            "text": "These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See running in production for notes on how to deploy the project on a live system.", 
+            "title": "Getting Started"
+        }, 
+        {
+            "location": "/clients/python/#installing", 
             "text": "", 
-            "title": "Coming Soon"
+            "title": "Installing"
+        }, 
+        {
+            "location": "/clients/python/#via-pip", 
+            "text": "pip install bullet-train", 
+            "title": "VIA pip"
+        }, 
+        {
+            "location": "/clients/python/#usage", 
+            "text": "Retrieving feature flags for your project  For full documentation visit  https://docs.bullet-train.io  from bullet_train import BulletTrain;\n\nbt = BulletTrain(environment_id= YOUR_ENVIRONMENT_KEY )\n\nif bt.has_feature( header , ' My User Id '):\n  if bt.feature_enabled( header ):\n    # Show my awesome cool new feature to the world\n\nif bt.has_feature( header ):\n  if bt.feature_enabled( header ):\n    # Show my awesome cool new feature to the world\n\nvalue = bt.get_value( header , ' My User Id ')\n\nvalue = bt.get_value( header )  Available Options     Property  Description  Required  Default Value      environment_id  Defines which project environment you wish to get flags for.  example ACME Project - Staging.  YES  None    api  Use this property to define where you're getting feature flags from, e.g. if you're self hosting.  NO  https://api.bullet-train.io/api/     Available Functions     Function  Description      has_feature(key)  Get the value of a particular feature e.g.  bt.has_feature(\"powerUserFeature\") // true    has_feature(key, user_id)  Get the value of a particular feature for a user e.g.  bt.has_feature(\"powerUserFeature\", 1234) // true    get_value(key)  Get the value of a particular feature e.g.  bt.get_value(\"font_size\") // 10    get_value(key, userId)  Get the value of a particular feature for a specified user e.g.  bt.get_value(\"font_size\", 1234) // 15    get_flags()  Trigger a manual fetch of the environment features, returns a list of flag objects, see below for returned data    get_flags_for_user(1234)  Trigger a manual fetch of the environment features with a given user id, returns a list of flag objects, see below for returned data     Identifying users  Identifying users allows you to target specific users from the  Bullet Train dashboard .\nYou can include an optional user identifier as part of the  has_feature  and  get_value  methods to retrieve unique user flags and variables.  Flags data structure     Field  Description  Type      id  Internal id of feature state  Integer    enabled  Whether feature is enabled or not  Boolean    environment  Internal ID of environment  Integer    feature_state_value  Value of the feature  Any - determined based on data input on  bullet-train.io .    feature  Feature object - see below for details  Object     Feature data structure     Field  Description  Type      id  Internal id of feature  Integer    name  Name of the feature (sometimes referred to as key or ID)  String    description  Description of the feature  String    type  Feature Type. Can be FLAG or CONFIG  String    created_date  Date feature was created  Datetime    inital_value  The initial / default value set for all feature states on creation  String    project  Internal ID of the associated project  Integer", 
+            "title": "Usage"
+        }, 
+        {
+            "location": "/clients/python/#contributing", 
+            "text": "Please read  CONTRIBUTING.md  for details on our code of conduct, and the process for submitting pull requests to us.", 
+            "title": "Contributing"
+        }, 
+        {
+            "location": "/clients/python/#getting-help", 
+            "text": "If you encounter a bug or feature request we would like to hear about it. Before you submit an issue please search existing issues in order to prevent duplicates.", 
+            "title": "Getting Help"
+        }, 
+        {
+            "location": "/clients/python/#get-in-touch", 
+            "text": "If you have any questions about our projects you can email  projects@solidstategroup.com .", 
+            "title": "Get in touch"
         }, 
         {
             "location": "/clients/ruby/", 
