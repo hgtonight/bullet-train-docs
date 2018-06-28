@@ -174,32 +174,18 @@
                 <p>This library can be used with server-side Java and Android applications. The source code for the client is available on <a href="https://github.com/SolidStateGroup/bullet-train-java-client">Github</a>.</p>
 <h2 id="getting-started">Getting Started</h2>
 <h2 id="quick-setup">Quick Setup</h2>
-<p>Before adding maven dependency to your local environment please follow these instruction first:</p>
-<ul>
-<li>download source code from github</li>
-</ul>
-<pre><code class="ssh">git clone git@github.com:SolidStateGroup/bullet-train-java-client.git
-cd bullet-train-java-client
-</code></pre>
-
-<ul>
-<li>run mvn command to install jar into your local maven repository</li>
-</ul>
-<pre><code class="ssh">mvn clean install -DskipTests
-</code></pre>
-
-<p>Now you can use below steps to add client to your project.</p>
+<p>The client library is available from the Central Maven Repository and can be added to your project by many tools:</p>
 <h3 id="maven">Maven</h3>
 <p>Add following dependencies to your project in <code>pom.xml</code></p>
 <pre><code class="xml">&lt;dependency&gt;
-  &lt;groupId&gt;com.ssg&lt;/groupId&gt;
+  &lt;groupId&gt;com.solidstategroup&lt;/groupId&gt;
   &lt;artifactId&gt;bullet-train-client&lt;/artifactId&gt;
-  &lt;version&gt;1.0&lt;/version&gt;
+  &lt;version&gt;1.1&lt;/version&gt;
 &lt;/dependency&gt;
 </code></pre>
 
 <h3 id="gradle">Gradle</h3>
-<pre><code class="groovy">implementation 'com.ssg:bullet-train-client:1.0'
+<pre><code class="groovy">implementation 'com.solidstategroup:bullet-train-client:1.1'
 </code></pre>
 
 <h2 id="usage">Usage</h2>
@@ -251,7 +237,7 @@ if (featureEnabled) {
 <h2 id="getting-help">Getting Help</h2>
 <p>If you encounter a bug or feature request we would like to hear about it. Before you submit an issue please search existing issues in order to prevent duplicates. </p>
 <h2 id="get-in-touch">Get in touch</h2>
-<p>If you have any questions about our projects you can email <a href="mailto:bullettrain@solidstategroup.com">bullettrain@solidstategroup.com</a>.</p>
+<p>If you have any questions about our projects you can email <a href="mailto:projects@solidstategroup.com">projects@solidstategroup.com</a>.</p>
               
             </div>
           </div>

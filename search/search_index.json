@@ -147,7 +147,7 @@
         }, 
         {
             "location": "/clients/java/", 
-            "text": "This library can be used with server-side Java and Android applications. The source code for the client is available on \nGithub\n.\n\n\nGetting Started\n\n\nQuick Setup\n\n\nBefore adding maven dependency to your local environment please follow these instruction first:\n\n\n\n\ndownload source code from github\n\n\n\n\ngit clone git@github.com:SolidStateGroup/bullet-train-java-client.git\ncd bullet-train-java-client\n\n\n\n\n\n\nrun mvn command to install jar into your local maven repository\n\n\n\n\nmvn clean install -DskipTests\n\n\n\n\nNow you can use below steps to add client to your project.\n\n\nMaven\n\n\nAdd following dependencies to your project in \npom.xml\n\n\ndependency\n\n  \ngroupId\ncom.ssg\n/groupId\n\n  \nartifactId\nbullet-train-client\n/artifactId\n\n  \nversion\n1.0\n/version\n\n\n/dependency\n\n\n\n\n\nGradle\n\n\nimplementation 'com.ssg:bullet-train-client:1.0'\n\n\n\n\nUsage\n\n\nRetrieving feature flags for your project\n\n\nFor full documentation visit \nhttps://bullet-train.io/documentation\n\n\nSign Up and create account at \nhttps://bullet-train.io/\n\n\nIn your application initialise BulletTrain client with your API key\n\n\nBulletTrainClient bulletClient = BulletTrainClient.newBuilder()\n                .setApiKey(\nYOUR_ENV_API_KEY\n)\n                .build();\n\n\n\n\nTo check if feature flag exist and enabled:\n\n\nboolean featureEnabled = bulletClient.hasFeatureFlag(\nmy_test_feature\n);\nif (featureEnabled) {\n    // run the code to execute enabled feature\n} else {\n    // run the code if feature switched off\n}\n\n\n\n\nTo get configuration value for feature flag:\n\n\nboolean featureEnabled = bulletClient.hasFeatureFlag(\nmy_test_feature\n);\nif (featureEnabled) {\n    String myRemoteConfig = bulletClient.getFeatureFlagValue(\nmy_test_feature\n);\n    // run the code for to execute enabled feature\n} else {\n    // run the code if feature switched off\n}\n\n\n\n\nIdentifying users\n\n\nIdentifying users allows you to target specific users from the \nBullet Train dashboard\n.\n\n\nTo check if feature exist for given user context:\n\n\nUser user = new User();\nuser.setIdentifier(\nbullet_train_sample_user\n);\n\nboolean featureEnabled = bulletClient.hasFeatureFlag(\nmy_test_feature\n, user);\nif (featureEnabled) {\n    String myRemoteConfig = bulletClient.getFeatureFlagValue(\nmy_test_feature\n, user);\n    // run the code for to execute enabled feature for given user\n} else {\n    // run the code if feature switched off\n}\n\n\n\n\nContributing\n\n\nPlease read \nCONTRIBUTING.md\n for details on our code of conduct, and the process for submitting pull requests to us.\n\n\nGetting Help\n\n\nIf you encounter a bug or feature request we would like to hear about it. Before you submit an issue please search existing issues in order to prevent duplicates. \n\n\nGet in touch\n\n\nIf you have any questions about our projects you can email \nbullettrain@solidstategroup.com\n.", 
+            "text": "This library can be used with server-side Java and Android applications. The source code for the client is available on \nGithub\n.\n\n\nGetting Started\n\n\nQuick Setup\n\n\nThe client library is available from the Central Maven Repository and can be added to your project by many tools:\n\n\nMaven\n\n\nAdd following dependencies to your project in \npom.xml\n\n\ndependency\n\n  \ngroupId\ncom.solidstategroup\n/groupId\n\n  \nartifactId\nbullet-train-client\n/artifactId\n\n  \nversion\n1.1\n/version\n\n\n/dependency\n\n\n\n\n\nGradle\n\n\nimplementation 'com.solidstategroup:bullet-train-client:1.1'\n\n\n\n\nUsage\n\n\nRetrieving feature flags for your project\n\n\nFor full documentation visit \nhttps://bullet-train.io/documentation\n\n\nSign Up and create account at \nhttps://bullet-train.io/\n\n\nIn your application initialise BulletTrain client with your API key\n\n\nBulletTrainClient bulletClient = BulletTrainClient.newBuilder()\n                .setApiKey(\nYOUR_ENV_API_KEY\n)\n                .build();\n\n\n\n\nTo check if feature flag exist and enabled:\n\n\nboolean featureEnabled = bulletClient.hasFeatureFlag(\nmy_test_feature\n);\nif (featureEnabled) {\n    // run the code to execute enabled feature\n} else {\n    // run the code if feature switched off\n}\n\n\n\n\nTo get configuration value for feature flag:\n\n\nboolean featureEnabled = bulletClient.hasFeatureFlag(\nmy_test_feature\n);\nif (featureEnabled) {\n    String myRemoteConfig = bulletClient.getFeatureFlagValue(\nmy_test_feature\n);\n    // run the code for to execute enabled feature\n} else {\n    // run the code if feature switched off\n}\n\n\n\n\nIdentifying users\n\n\nIdentifying users allows you to target specific users from the \nBullet Train dashboard\n.\n\n\nTo check if feature exist for given user context:\n\n\nUser user = new User();\nuser.setIdentifier(\nbullet_train_sample_user\n);\n\nboolean featureEnabled = bulletClient.hasFeatureFlag(\nmy_test_feature\n, user);\nif (featureEnabled) {\n    String myRemoteConfig = bulletClient.getFeatureFlagValue(\nmy_test_feature\n, user);\n    // run the code for to execute enabled feature for given user\n} else {\n    // run the code if feature switched off\n}\n\n\n\n\nContributing\n\n\nPlease read \nCONTRIBUTING.md\n for details on our code of conduct, and the process for submitting pull requests to us.\n\n\nGetting Help\n\n\nIf you encounter a bug or feature request we would like to hear about it. Before you submit an issue please search existing issues in order to prevent duplicates. \n\n\nGet in touch\n\n\nIf you have any questions about our projects you can email \nprojects@solidstategroup.com\n.", 
             "title": "Java"
         }, 
         {
@@ -157,17 +157,17 @@
         }, 
         {
             "location": "/clients/java/#quick-setup", 
-            "text": "Before adding maven dependency to your local environment please follow these instruction first:   download source code from github   git clone git@github.com:SolidStateGroup/bullet-train-java-client.git\ncd bullet-train-java-client   run mvn command to install jar into your local maven repository   mvn clean install -DskipTests  Now you can use below steps to add client to your project.", 
+            "text": "The client library is available from the Central Maven Repository and can be added to your project by many tools:", 
             "title": "Quick Setup"
         }, 
         {
             "location": "/clients/java/#maven", 
-            "text": "Add following dependencies to your project in  pom.xml  dependency \n   groupId com.ssg /groupId \n   artifactId bullet-train-client /artifactId \n   version 1.0 /version  /dependency", 
+            "text": "Add following dependencies to your project in  pom.xml  dependency \n   groupId com.solidstategroup /groupId \n   artifactId bullet-train-client /artifactId \n   version 1.1 /version  /dependency", 
             "title": "Maven"
         }, 
         {
             "location": "/clients/java/#gradle", 
-            "text": "implementation 'com.ssg:bullet-train-client:1.0'", 
+            "text": "implementation 'com.solidstategroup:bullet-train-client:1.1'", 
             "title": "Gradle"
         }, 
         {
@@ -187,7 +187,7 @@
         }, 
         {
             "location": "/clients/java/#get-in-touch", 
-            "text": "If you have any questions about our projects you can email  bullettrain@solidstategroup.com .", 
+            "text": "If you have any questions about our projects you can email  projects@solidstategroup.com .", 
             "title": "Get in touch"
         }, 
         {
