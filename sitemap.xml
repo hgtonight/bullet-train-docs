@@ -21,6 +21,11 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>https://docs.bullet-train.io/managing-segments/</loc>
+     <lastmod>2018-11-29</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>https://docs.bullet-train.io/clients/javascript/</loc>
      <lastmod>2018-11-29</lastmod>
      <changefreq>daily</changefreq>
