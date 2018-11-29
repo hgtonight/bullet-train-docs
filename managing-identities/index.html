@@ -8,7 +8,7 @@
   
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Managing Features - Bullet Train Docs</title>
+  <title>Managing Identities - Bullet Train Docs</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../css/theme.css" type="text/css" />
@@ -17,9 +17,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Managing Features";
-    var mkdocs_page_input_path = "managing-features.md";
-    var mkdocs_page_url = "/managing-features/";
+    var mkdocs_page_name = "Managing Identities";
+    var mkdocs_page_input_path = "managing-identities.md";
+    var mkdocs_page_url = "/managing-identities/";
   </script>
   
   <script src="../js/jquery-2.1.1.min.js" defer></script>
@@ -68,35 +68,30 @@
     <a class="" href="../hosted-service/">Hosted Service</a>
 	    </li>
           
+            <li class="toctree-l1">
+		
+    <a class="" href="../managing-features/">Managing Features</a>
+	    </li>
+          
             <li class="toctree-l1 current">
 		
-    <a class="current" href="./">Managing Features</a>
+    <a class="current" href="./">Managing Identities</a>
     <ul class="subnav">
             
-    <li class="toctree-l2"><a href="#features">Features</a></li>
-    
-
-    <li class="toctree-l2"><a href="#organisations">Organisations</a></li>
-    
-
-    <li class="toctree-l2"><a href="#projects">Projects</a></li>
-    
-
-    <li class="toctree-l2"><a href="#environments">Environments</a></li>
-    
-
     <li class="toctree-l2"><a href="#identities">Identities</a></li>
     
-
-    <li class="toctree-l2"><a href="#segments-coming-soon">Segments (Coming soon)</a></li>
+        <ul>
+        
+            <li><a class="toctree-l3" href="#identity-feature-flags">Identity Feature Flags</a></li>
+        
+            <li><a class="toctree-l3" href="#identity-traits">Identity Traits</a></li>
+        
+            <li><a class="toctree-l3" href="#traits-powering-segments">Traits powering Segments</a></li>
+        
+        </ul>
     
 
     </ul>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../managing-identities/">Managing Identities</a>
 	    </li>
           
             <li class="toctree-l1">
@@ -152,10 +147,10 @@
     
       
     
-    <li>Managing Features</li>
+    <li>Managing Identities</li>
     <li class="wy-breadcrumbs-aside">
       
-        <a href="https://github.com/SolidStateGroup/Bullet-Train-Docs/edit/master/docs/managing-features.md"
+        <a href="https://github.com/SolidStateGroup/Bullet-Train-Docs/edit/master/docs/managing-identities.md"
           class="icon icon-github"> Edit on GitHub</a>
       
     </li>
@@ -165,26 +160,21 @@
           <div role="main">
             <div class="section">
               
-                <h2 id="features">Features</h2>
-<p>Rather than just a flag that can be turned on / off, features within Bullet Train are pieces of functionality that have an enabled state as well as a configurable value. This allows you to use Bullet Train in the following ways.</p>
+                <h1 id="identities">Identities</h1>
+<p>Identities are created within Bullet Train automatically the first time they are identified from your client SDKs. Generally you'd make a call to identify a user with a unique string/id whenever they log into your app/site.</p>
+<p>Identity features can be overridden from your environment defaults. For example, joe@yourwebsite.com would be a different identity in your development environment to the one in production, and they can have different features enabled for each environment.</p>
+<h2 id="identity-feature-flags">Identity Feature Flags</h2>
+<p>By default, Identities receive the default flags for their environment. The main use for identities is to be able to override flags and configs on a per-identity basis. You can do this by navigating to the Users page, finding the user and modifying their flags. </p>
+<h2 id="identity-traits">Identity Traits</h2>
+<p>You can also use Bullet Train to store 'Traits' against identities. Traits are simply key/value pairs that are associated with individual Identities. Traits can be used to store additional data about your users that would be cumbersome to store within your application. Some possible uses for traits could be:</p>
 <ul>
-<li>Showing and hiding features in your application. E.g. Instant messaging within an application.</li>
-<li>Configuring values used within your application remotely. E.g. The number of power-ups a user might have in a game.</li>
-<li>Configuring environment variables. E.g. Setting the database URL for your API.</li>
+<li>Storing whether the user has accepted a new set of terms and conditions.</li>
+<li>Storing the last viewed page of the application so that you can resume the users place later, across any device.</li>
 </ul>
-<p>Features are created on a per project basis but edited per environment and can then be overridden on a per user basis. </p>
-<h2 id="organisations">Organisations</h2>
-<p>Organisations are a way for you and other team members to manage projects and their features. Users can be members of multiple organisations.</p>
-<h2 id="projects">Projects</h2>
-<p>Projects contain one or more environments that share a single set of features and one or more environments. Organisations can have any number of projects.</p>
-<h2 id="environments">Environments</h2>
-<p>Environments are a way to separate the configuration of your features. For example, your project's Development and Staging environments might have a feature configured as on while it is turned off in your Production environment. A project can have any number of environments. </p>
-<h2 id="identities">Identities</h2>
-<p>Identities are a particular registration for one of your Project's environments. Registering identities within the client application allows you to manage features for individual users. Identity features can be overridden from your environment defaults. For example, joe@yourwebsite.com would be a different identity in your development environment to the one in production, and they can have different features enabled for each environment.</p>
-<p>For more info see the <a href="/managing-identities">Identities</a>. </p>
-<h2 id="segments-coming-soon">Segments (<strong>Coming soon</strong>)</h2>
-<p>Segments are a way to define a group of users by traits such as number of times logged in, device, location or any number of custom defined traits.</p>
-<p>Similarly to individual users, you will be able to override environment defaults for features. For example showing certain features for a "power user" segment.</p>
+<p>Generally if they are lower-value pieces of information about your user, it might be simpler/easier to store them in Bullet Train rather than in your core application.</p>
+<p>Traits are stored natively as either numbers, strings or booleans.</p>
+<h2 id="traits-powering-segments">Traits powering Segments</h2>
+<p>When the Segments feature is built, you will be able to specify segments based on Identity Traits.</p>
               
             </div>
           </div>
@@ -192,10 +182,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../managing-identities/" class="btn btn-neutral float-right" title="Managing Identities">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../clients/javascript/" class="btn btn-neutral float-right" title="Javascript/React Native">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../hosted-service/" class="btn btn-neutral" title="Hosted Service"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../managing-features/" class="btn btn-neutral" title="Managing Features"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -223,10 +213,10 @@
           <a href="https://github.com/SolidStateGroup/Bullet-Train-Docs/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
-        <span><a href="../hosted-service/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../managing-features/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../managing-identities/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../clients/javascript/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
