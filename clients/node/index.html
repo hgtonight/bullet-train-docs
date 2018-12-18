@@ -13,7 +13,7 @@
 
   <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  <link rel="stylesheet" href="../../css/highlight.css">
   
   <script>
     // Current page data
@@ -22,16 +22,15 @@
     var mkdocs_page_url = "/clients/node/";
   </script>
   
-  <script src="../../js/jquery-2.1.1.min.js" defer></script>
-  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script> 
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script> 
   
   <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
       ga('create', 'UA-120237963-2', 'bullet-train.io');
       ga('send', 'pageview');
@@ -49,7 +48,7 @@
         <a href="../.." class="icon icon-home"> Bullet Train Docs</a>
         <div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+    <input type="text" name="q" placeholder="Search docs" />
   </form>
 </div>
       </div>
@@ -192,33 +191,31 @@
 <pre><code class="javascript">var bulletTrain = require(&quot;bullet-train-nodejs&quot;);
 
 bulletTrain.init({
-    environmentID:&quot;&lt;YOUR_ENVIRONMENT_KEY&gt;&quot;
-    }
+    environmentID: &quot;&lt;YOUR_ENVIRONMENT_KEY&gt;&quot;
 });
-
 
 bulletTrain.hasFeature(&quot;header&quot;, '&lt;My User Id&gt;')
-.then((featureEnabled) =&gt; {
-    if (featureEnabled) {
-        //Show my awesome cool new feature to this one user
-    }
-});
+    .then((featureEnabled) =&gt; {
+        if (featureEnabled) {
+            //Show my awesome cool new feature to this one user
+        }
+    });
 bulletTrain.hasFeature(&quot;header&quot;)
-.then((featureEnabled) =&gt; {
-    if (featureEnabled) {
-        //Show my awesome cool new feature to the world
-    }
-});
+    .then((featureEnabled) =&gt; {
+        if (featureEnabled) {
+            //Show my awesome cool new feature to the world
+        }
+    });
 
 bulletTrain.getValue(&quot;header&quot;, '&lt;My User Id')
-.then((value) =&gt; {
-    //Show some unique value to this user
-});
+    .then((value) =&gt; {
+        //Show some unique value to this user
+    });
 
 bulletTrain.getValue(&quot;header&quot;)
-.then((value) =&gt; {
-    //Show a value to the world
-});
+    .then((value) =&gt; {
+        //Show a value to the world
+    });
 </code></pre>
 
 <p><strong>Available Options</strong></p>
@@ -284,16 +281,28 @@ bulletTrain.getValue(&quot;header&quot;)
 <td align="center">Get the value of a particular feature e.g. <code>bulletTrain.getValue("font_size") // 10</code></td>
 </tr>
 <tr>
-<td><code>getValue(keym userId)</code></td>
+<td><code>getValue(key, userId)</code></td>
 <td align="center">Get the value of a particular feature for a specificed user e.g. <code>bulletTrain.getValue("font_size", 1234) // 15</code></td>
 </tr>
 <tr>
 <td><code>getFlags()</code></td>
-<td align="center">Trigger a manual fetch of the environment features, if a user is identified it will fetch their features</td>
+<td align="center">Trigger a manual fetch of the environment features</td>
 </tr>
 <tr>
-<td><code>getFlagsForUser(1234)</code></td>
-<td align="center">Trigger a manual fetch of the environment features with a given user id</td>
+<td><code>getFlagsForUser(userId)</code></td>
+<td align="center">Trigger a manual fetch of the environment features for a given user id</td>
+</tr>
+<tr>
+<td><code>getUserIdentity(userId)</code></td>
+<td align="center">Trigger a manual fetch of both the environment features and users' traits for a given user id</td>
+</tr>
+<tr>
+<td><code>getTrait(userId, key)</code></td>
+<td align="center">Trigger a manual fetch of a specific trait for a given user id</td>
+</tr>
+<tr>
+<td><code>setTrait(userId, key, value)</code></td>
+<td align="center">Set a specific trait for a given user id</td>
 </tr>
 </tbody>
 </table>
@@ -303,7 +312,7 @@ You can include an optional user identifier as part of the <code>hasFeature</cod
 <h2 id="contributing">Contributing</h2>
 <p>Please read <a href="https://gist.github.com/kyle-ssg/c36a03aebe492e45cbd3eefb21cb0486">CONTRIBUTING.md</a> for details on our code of conduct, and the process for submitting pull requests to us.</p>
 <h2 id="getting-help">Getting Help</h2>
-<p>If you encounter a bug or feature request we would like to hear about it. Before you submit an issue please search existing issues in order to prevent duplicates. </p>
+<p>If you encounter a bug or feature request we would like to hear about it. Before you submit an issue please search existing issues in order to prevent duplicates.</p>
 <h2 id="get-in-touch">Get in touch</h2>
 <p>If you have any questions about our projects you can email <a href="mailto:projects@solidstategroup.com">projects@solidstategroup.com</a>.</p>
               
@@ -352,8 +361,9 @@ You can include an optional user identifier as part of the <code>hasFeature</cod
     </span>
 </div>
     <script>var base_url = '../..';</script>
-    <script src="../../js/theme.js" defer></script>
-      <script src="../../search/main.js" defer></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/require.js"></script>
+      <script src="../../search/search.js"></script>
 
 </body>
 </html>
