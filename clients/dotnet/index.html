@@ -111,7 +111,22 @@
     <a class="current" href="./">.Net</a>
     <ul class="subnav">
             
-    <li class="toctree-l3"><a href="#coming-soon">Coming Soon</a></li>
+    <li class="toctree-l3"><a href="#getting-started">Getting Started</a></li>
+    
+
+    <li class="toctree-l3"><a href="#quick-setup">Quick Setup</a></li>
+    
+
+    <li class="toctree-l3"><a href="#usage">Usage</a></li>
+    
+
+    <li class="toctree-l3"><a href="#contributing">Contributing</a></li>
+    
+
+    <li class="toctree-l3"><a href="#getting-help">Getting Help</a></li>
+    
+
+    <li class="toctree-l3"><a href="#get-in-touch">Get in touch</a></li>
     
 
     </ul>
@@ -158,7 +173,102 @@
           <div role="main">
             <div class="section">
               
-                <h2 id="coming-soon">Coming Soon</h2>
+                <p>This SDK can be used for .NET Core, .NET Framework, Mono, Xamarin and Universal Windows Platform applications. The source code for the client is available on <a href="https://github.com/SolidStateGroup/bullet-train-dotnet-client">Github</a>.</p>
+<h2 id="getting-started">Getting Started</h2>
+<h2 id="quick-setup">Quick Setup</h2>
+<p>The client library is available from NuGet and can be added to your project by many tools. You can find the package here <a href="https://www.nuget.org/packages/BulletTrain/">https://www.nuget.org/packages/BulletTrain/</a></p>
+<h2 id="usage">Usage</h2>
+<p><strong>Retrieving feature flags for your project</strong></p>
+<p><strong>For full documentation visit <a href="https://docs.bullet-train.io">https://docs.bullet-train.io</a></strong></p>
+<p>Sign Up and create account at <a href="https://www.bullet-train.io/">https://bullet-train.io/</a></p>
+<p>In your application initialise the Bullet Train client with your environment API key</p>
+<pre><code class="c#">BulletTrainClient bulletClient = new BulletTrainClient() {
+  environmentKey: &quot;&lt;environment-key-here&gt;&quot;
+};
+</code></pre>
+
+<p>To check if a feature flag exists and is enabled:</p>
+<pre><code class="c#">bool featureEnabled = await bulletClient.HasFeatureFlag(&quot;my_test_feature&quot;);
+if (featureEnabled) {
+    // run the code to execute enabled feature
+} else {
+    // run the code if feature switched off
+}
+</code></pre>
+
+<p>To get a remote config feature value:</p>
+<pre><code class="c#">string myRemoteConfig = await bulletClient.GetFeatureValue(&quot;my_test_feature&quot;);
+if (myRemoteConfig != null) {
+    // run the code to use remote config value
+} else {
+    // run the code without remote config
+}
+</code></pre>
+
+<p><strong>Identifying users</strong></p>
+<p>Identifying users allows you to target specific users from the <a href="https://www.bullet-train.io/">Bullet Train dashboard</a>.</p>
+<p>To check if a feature exists and is enabled for a specific user:</p>
+<pre><code class="c#">bool featureEnabled = await bulletClient.HasFeatureFlag(&quot;my_test_feature&quot;, &quot;my_user_id&quot;);
+if (featureEnabled) {
+    // run the code to execute enabled feature for given user
+} else {
+    // run the code when feature switched off
+}
+</code></pre>
+
+<p>To get a remote config value for specific user:</p>
+<pre><code class="c#">string myRemoteConfig = await bulletClient.GetFeatureValue(&quot;my_test_feature&quot;, &quot;my_user_id&quot;);
+if (myRemoteConfig != null) {
+    // run the code to use remote config value
+} else {
+    // run the code without remote config
+}
+</code></pre>
+
+<p>To get user traits:</p>
+<pre><code class="c#">List&lt;Trait&gt; userTraits = await bulletClient.GetTraits(&quot;my_user_id&quot;)
+if (userTraits != null &amp;&amp; userTraits) {
+    // run the code to use user traits
+} else {
+    // run the code without user traits
+}
+</code></pre>
+
+<p>To get a specific user trait:</p>
+<pre><code class="c#">Trait userTrait = await bulletClient.GetTrait(&quot;my_user_id&quot;, &quot;cookies_key&quot;);
+if (userTrait != null) {
+    // run the code to use user trait
+} else {
+    // run the code without user trait
+}
+</code></pre>
+
+<p>To get filtered user traits:</p>
+<pre><code class="c#">List&lt;Trait&gt; userTraits = await bulletClient.GetTraits(&quot;my_user_id&quot;, new List&lt;string&gt; { &quot;specific_key&quot;, /* rest of elements */ });
+if (userTraits != null) {
+    // run the code to use user traits
+} else {
+    // run the code without user traits
+}
+</code></pre>
+
+<p>To set or update a user trait:</p>
+<pre><code class="c#">Trait userTrait = await bulletClient.SetTrait(&quot;my_user_id&quot;, &quot;my_user_trait&quot;, &quot;blue&quot;);
+</code></pre>
+
+<p>To retrieve a user identity (both features and traits):</p>
+<pre><code class="c#">Identity userIdentity = await bulletClient.GetUserIdentity(&quot;my_user_id&quot;);
+if (userIdentity != null) {
+  // Run the code to use user identity i.e. userIdentity.flags or userIdentity.traits
+}
+</code></pre>
+
+<h2 id="contributing">Contributing</h2>
+<p>Please read <a href="https://gist.github.com/kyle-ssg/c36a03aebe492e45cbd3eefb21cb0486">CONTRIBUTING.md</a> for details on our code of conduct, and the process for submitting pull requests to us.</p>
+<h2 id="getting-help">Getting Help</h2>
+<p>If you encounter a bug or feature request we would like to hear about it. Before you submit an issue please search existing issues in order to prevent duplicates.</p>
+<h2 id="get-in-touch">Get in touch</h2>
+<p>If you have any questions about our projects you can email <a href="mailto:projects@solidstategroup.com">projects@solidstategroup.com</a>.</p>
               
             </div>
           </div>

@@ -317,13 +317,38 @@
         }, 
         {
             "location": "/clients/dotnet/", 
-            "text": "Coming Soon", 
+            "text": "This SDK can be used for .NET Core, .NET Framework, Mono, Xamarin and Universal Windows Platform applications. The source code for the client is available on \nGithub\n.\n\n\nGetting Started\n\n\nQuick Setup\n\n\nThe client library is available from NuGet and can be added to your project by many tools. You can find the package here \nhttps://www.nuget.org/packages/BulletTrain/\n\n\nUsage\n\n\nRetrieving feature flags for your project\n\n\nFor full documentation visit \nhttps://docs.bullet-train.io\n\n\nSign Up and create account at \nhttps://bullet-train.io/\n\n\nIn your application initialise the Bullet Train client with your environment API key\n\n\nBulletTrainClient bulletClient = new BulletTrainClient() {\n  environmentKey: \nenvironment-key-here\n\n};\n\n\n\n\nTo check if a feature flag exists and is enabled:\n\n\nbool featureEnabled = await bulletClient.HasFeatureFlag(\nmy_test_feature\n);\nif (featureEnabled) {\n    // run the code to execute enabled feature\n} else {\n    // run the code if feature switched off\n}\n\n\n\n\nTo get a remote config feature value:\n\n\nstring myRemoteConfig = await bulletClient.GetFeatureValue(\nmy_test_feature\n);\nif (myRemoteConfig != null) {\n    // run the code to use remote config value\n} else {\n    // run the code without remote config\n}\n\n\n\n\nIdentifying users\n\n\nIdentifying users allows you to target specific users from the \nBullet Train dashboard\n.\n\n\nTo check if a feature exists and is enabled for a specific user:\n\n\nbool featureEnabled = await bulletClient.HasFeatureFlag(\nmy_test_feature\n, \nmy_user_id\n);\nif (featureEnabled) {\n    // run the code to execute enabled feature for given user\n} else {\n    // run the code when feature switched off\n}\n\n\n\n\nTo get a remote config value for specific user:\n\n\nstring myRemoteConfig = await bulletClient.GetFeatureValue(\nmy_test_feature\n, \nmy_user_id\n);\nif (myRemoteConfig != null) {\n    // run the code to use remote config value\n} else {\n    // run the code without remote config\n}\n\n\n\n\nTo get user traits:\n\n\nList\nTrait\n userTraits = await bulletClient.GetTraits(\nmy_user_id\n)\nif (userTraits != null \n userTraits) {\n    // run the code to use user traits\n} else {\n    // run the code without user traits\n}\n\n\n\n\nTo get a specific user trait:\n\n\nTrait userTrait = await bulletClient.GetTrait(\nmy_user_id\n, \ncookies_key\n);\nif (userTrait != null) {\n    // run the code to use user trait\n} else {\n    // run the code without user trait\n}\n\n\n\n\nTo get filtered user traits:\n\n\nList\nTrait\n userTraits = await bulletClient.GetTraits(\nmy_user_id\n, new List\nstring\n { \nspecific_key\n, /* rest of elements */ });\nif (userTraits != null) {\n    // run the code to use user traits\n} else {\n    // run the code without user traits\n}\n\n\n\n\nTo set or update a user trait:\n\n\nTrait userTrait = await bulletClient.SetTrait(\nmy_user_id\n, \nmy_user_trait\n, \nblue\n);\n\n\n\n\nTo retrieve a user identity (both features and traits):\n\n\nIdentity userIdentity = await bulletClient.GetUserIdentity(\nmy_user_id\n);\nif (userIdentity != null) {\n  // Run the code to use user identity i.e. userIdentity.flags or userIdentity.traits\n}\n\n\n\n\nContributing\n\n\nPlease read \nCONTRIBUTING.md\n for details on our code of conduct, and the process for submitting pull requests to us.\n\n\nGetting Help\n\n\nIf you encounter a bug or feature request we would like to hear about it. Before you submit an issue please search existing issues in order to prevent duplicates.\n\n\nGet in touch\n\n\nIf you have any questions about our projects you can email \nprojects@solidstategroup.com\n.", 
             "title": ".Net"
         }, 
         {
-            "location": "/clients/dotnet/#coming-soon", 
+            "location": "/clients/dotnet/#getting-started", 
             "text": "", 
-            "title": "Coming Soon"
+            "title": "Getting Started"
+        }, 
+        {
+            "location": "/clients/dotnet/#quick-setup", 
+            "text": "The client library is available from NuGet and can be added to your project by many tools. You can find the package here  https://www.nuget.org/packages/BulletTrain/", 
+            "title": "Quick Setup"
+        }, 
+        {
+            "location": "/clients/dotnet/#usage", 
+            "text": "Retrieving feature flags for your project  For full documentation visit  https://docs.bullet-train.io  Sign Up and create account at  https://bullet-train.io/  In your application initialise the Bullet Train client with your environment API key  BulletTrainClient bulletClient = new BulletTrainClient() {\n  environmentKey:  environment-key-here \n};  To check if a feature flag exists and is enabled:  bool featureEnabled = await bulletClient.HasFeatureFlag( my_test_feature );\nif (featureEnabled) {\n    // run the code to execute enabled feature\n} else {\n    // run the code if feature switched off\n}  To get a remote config feature value:  string myRemoteConfig = await bulletClient.GetFeatureValue( my_test_feature );\nif (myRemoteConfig != null) {\n    // run the code to use remote config value\n} else {\n    // run the code without remote config\n}  Identifying users  Identifying users allows you to target specific users from the  Bullet Train dashboard .  To check if a feature exists and is enabled for a specific user:  bool featureEnabled = await bulletClient.HasFeatureFlag( my_test_feature ,  my_user_id );\nif (featureEnabled) {\n    // run the code to execute enabled feature for given user\n} else {\n    // run the code when feature switched off\n}  To get a remote config value for specific user:  string myRemoteConfig = await bulletClient.GetFeatureValue( my_test_feature ,  my_user_id );\nif (myRemoteConfig != null) {\n    // run the code to use remote config value\n} else {\n    // run the code without remote config\n}  To get user traits:  List Trait  userTraits = await bulletClient.GetTraits( my_user_id )\nif (userTraits != null   userTraits) {\n    // run the code to use user traits\n} else {\n    // run the code without user traits\n}  To get a specific user trait:  Trait userTrait = await bulletClient.GetTrait( my_user_id ,  cookies_key );\nif (userTrait != null) {\n    // run the code to use user trait\n} else {\n    // run the code without user trait\n}  To get filtered user traits:  List Trait  userTraits = await bulletClient.GetTraits( my_user_id , new List string  {  specific_key , /* rest of elements */ });\nif (userTraits != null) {\n    // run the code to use user traits\n} else {\n    // run the code without user traits\n}  To set or update a user trait:  Trait userTrait = await bulletClient.SetTrait( my_user_id ,  my_user_trait ,  blue );  To retrieve a user identity (both features and traits):  Identity userIdentity = await bulletClient.GetUserIdentity( my_user_id );\nif (userIdentity != null) {\n  // Run the code to use user identity i.e. userIdentity.flags or userIdentity.traits\n}", 
+            "title": "Usage"
+        }, 
+        {
+            "location": "/clients/dotnet/#contributing", 
+            "text": "Please read  CONTRIBUTING.md  for details on our code of conduct, and the process for submitting pull requests to us.", 
+            "title": "Contributing"
+        }, 
+        {
+            "location": "/clients/dotnet/#getting-help", 
+            "text": "If you encounter a bug or feature request we would like to hear about it. Before you submit an issue please search existing issues in order to prevent duplicates.", 
+            "title": "Getting Help"
+        }, 
+        {
+            "location": "/clients/dotnet/#get-in-touch", 
+            "text": "If you have any questions about our projects you can email  projects@solidstategroup.com .", 
+            "title": "Get in touch"
         }
     ]
 }
