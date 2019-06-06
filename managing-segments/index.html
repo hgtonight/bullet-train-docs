@@ -85,6 +85,14 @@
             
     <li class="toctree-l2"><a href="#segments">Segments</a></li>
     
+        <ul>
+        
+            <li><a class="toctree-l3" href="#example-beta-users">Example - Beta Users</a></li>
+        
+            <li><a class="toctree-l3" href="#feature-flag-and-remote-config-precedence">Feature Flag and Remote Config Precedence</a></li>
+        
+        </ul>
+    
 
     </ul>
 	    </li>
@@ -160,7 +168,45 @@
             <div class="section">
               
                 <h1 id="segments">Segments</h1>
-<p>We are working on the specification/design for Segments on our <a href="https://github.com/SolidStateGroup/bullet-train-api/wiki/Segments">Github Page</a>. Feel free to contribute!</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Segments are currently in Beta. If you want to be included in the Beta test, get in touch.</p>
+</div>
+<p>Segments allow you to group your users based on a set of rules, and then control Feature Flags and Remote Config for those groups. You can create a Segment and then override a Feature Flag state or Remote Config value for that segment of users.</p>
+<h2 id="example-beta-users">Example - Beta Users</h2>
+<p>Let's say that you want all your team to automatically be defined as <code>Beta Users</code>. Right now, all your logged in users are <a href="/managing-identities/">identified</a> with their email address along with some other <a href="/managing-identities/#identity-traits">traits</a>.</p>
+<p>You create a new Segment, call it <code>Beta Users</code>, and define a single rule:</p>
+<ul>
+<li><code>email_address</code> contains <code>@bullet-train.io</code></li>
+</ul>
+<p>For all the Feature Flags that relate to Beta features, you can associate this <code>Beta Users</code> segment with each Flag, and set the Flag value to <code>true</code> for that Segment.</p>
+<p>At this point, all users who log in with an email address that contains <code>@bullet-train.io</code> will have all Beta features enabled.</p>
+<p>Let's say that you then partner with another company who need access to all Beta features. You can then simply modify the Segment rules:</p>
+<ul>
+<li><code>email_address</code> contains <code>@bullet-train.io</code></li>
+<li><code>email_address</code> contains <code>@solidstategroup.com</code></li>
+</ul>
+<p>Now all users who log in with a <code>@solidstategroup.com</code> email address are automatically included in beta features. </p>
+<h2 id="feature-flag-and-remote-config-precedence">Feature Flag and Remote Config Precedence</h2>
+<p>Feature Flag states and Remote Config values can be defined in 3 different places:</p>
+<ol>
+<li>The default Flag/Config value itself</li>
+<li>The Segment associated with the Flag/Config</li>
+<li>Overridden at an Identity level</li>
+</ol>
+<p>For example, a Feature Flag <code>Show Paypal Checkout</code> could be set to <code>false</code> on the Flag itself, <code>true</code> in the Beta Users segment, and then overridden as <code>false</code> for a specific Identity. </p>
+<p>In order to deal with this situation, there is an order of priority:</p>
+<ol>
+<li>If the Identity has an override value, this is returned ahead of Segments and Flags/Config</li>
+<li>If there's no Identity override, the Segment is checked and returned if valid</li>
+<li>If no Identity or Segment overrides the value, the default Flag/Config value is used</li>
+</ol>
+<p>More simply, the order of precendence is:</p>
+<ol>
+<li>Identity</li>
+<li>Segment</li>
+<li>Flag</li>
+</ol>
               
             </div>
           </div>
