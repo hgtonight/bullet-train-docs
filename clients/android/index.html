@@ -8,7 +8,7 @@
   
   
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>REST - Bullet Train Docs</title>
+  <title>Android - Bullet Train Docs</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
@@ -17,9 +17,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "REST";
-    var mkdocs_page_input_path = "clients/rest.md";
-    var mkdocs_page_url = "/clients/rest/";
+    var mkdocs_page_name = "Android";
+    var mkdocs_page_input_path = "clients/android.md";
+    var mkdocs_page_url = "/clients/android/";
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js"></script>
@@ -94,9 +94,15 @@
                     
     <a class="" href="../node/">Node</a>
                 </li>
-                <li class="">
+                <li class=" current">
                     
-    <a class="" href="../android/">Android</a>
+    <a class="current" href="./">Android</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#android-client">Android Client</a></li>
+    
+
+    </ul>
                 </li>
                 <li class="">
                     
@@ -114,23 +120,9 @@
                     
     <a class="" href="../dotnet/">.Net</a>
                 </li>
-                <li class=" current">
+                <li class="">
                     
-    <a class="current" href="./">REST</a>
-    <ul class="subnav">
-            
-    <li class="toctree-l3"><a href="#direct-api-access">Direct API Access</a></li>
-    
-        <ul>
-        
-            <li><a class="toctree-l4" href="#api-explorer">API Explorer</a></li>
-        
-            <li><a class="toctree-l4" href="#environment-key">Environment Key</a></li>
-        
-        </ul>
-    
-
-    </ul>
+    <a class="" href="../rest/">REST</a>
                 </li>
     </ul>
 	    </li>
@@ -161,10 +153,10 @@
         
       
     
-    <li>REST</li>
+    <li>Android</li>
     <li class="wy-breadcrumbs-aside">
       
-        <a href="https://github.com/SolidStateGroup/Bullet-Train-Docs/edit/master/docs/clients/rest.md"
+        <a href="https://github.com/SolidStateGroup/Bullet-Train-Docs/edit/master/docs/clients/android.md"
           class="icon icon-github"> Edit on GitHub</a>
       
     </li>
@@ -174,19 +166,8 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="direct-api-access">Direct API Access</h1>
-<p>You can access the API directly with tools like <a href="https://curl.haxx.se/">curl</a> or <a href="https://httpie.org/">httpie</a>, or with clients for languages that we do not currently have SDKs for.</p>
-<h2 id="api-explorer">API Explorer</h2>
-<p>You can view the API via Swagger at <a href="https://api.bullet-train.io/api/v1/docs/">https://api.bullet-train.io/api/v1/docs/</a>.</p>
-<h2 id="environment-key">Environment Key</h2>
-<p>Publicly accessible API calls need to have an environment key supplied with each request. This is provided as an HTTP header, with the name <code>X-Environment-Key</code> and the value of the environment API key that you can find within the Bullet Train administrative area. </p>
-<h3 id="curl-example">Curl Example</h3>
-<pre><code>curl 'https://api.bullet-train.io/api/v1/flags/' -H 'X-Environment-Key: TijpMX6ajA7REC4bf5suYg'
-</code></pre>
-
-<h3 id="httpie-example">httpie Example</h3>
-<pre><code>http GET 'https://api.bullet-train.io/api/v1/flags/' 'X-Environment-Key':'TijpMX6ajA7REC4bf5suYg'
-</code></pre>
+                <h1 id="android-client">Android Client</h1>
+<p>You can use the <a href="../../clients/java/">Java Client</a> to run Bullet Train within native Android applications.</p>
               
             </div>
           </div>
@@ -194,8 +175,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
+        <a href="../java/" class="btn btn-neutral float-right" title="Java">Next <span class="icon icon-circle-arrow-right"></span></a>
       
-        <a href="../dotnet/" class="btn btn-neutral" title=".Net"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+        <a href="../node/" class="btn btn-neutral" title="Node"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -223,8 +206,10 @@
           <a href="https://github.com/SolidStateGroup/Bullet-Train-Docs/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
-        <span><a href="../dotnet/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../node/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
+      
+        <span style="margin-left: 15px"><a href="../java/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
