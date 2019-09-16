@@ -13,7 +13,7 @@
 
   <link rel="stylesheet" href="../css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  <link rel="stylesheet" href="../css/highlight.css">
   
   <script>
     // Current page data
@@ -22,16 +22,15 @@
     var mkdocs_page_url = "/managing-features/";
   </script>
   
-  <script src="../js/jquery-2.1.1.min.js" defer></script>
-  <script src="../js/modernizr-2.8.3.min.js" defer></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script> 
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script> 
   
   <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
       ga('create', 'UA-120237963-2', 'bullet-train.io');
       ga('send', 'pageview');
@@ -49,7 +48,7 @@
         <a href=".." class="icon icon-home"> Bullet Train Docs</a>
         <div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+    <input type="text" name="q" placeholder="Search docs" />
   </form>
 </div>
       </div>
@@ -73,22 +72,23 @@
     <a class="current" href="./">Managing Features</a>
     <ul class="subnav">
             
-    <li class="toctree-l2"><a href="#features">Features</a></li>
+    <li class="toctree-l2"><a href="#feature-flags">Feature Flags</a></li>
     
-
-    <li class="toctree-l2"><a href="#organisations">Organisations</a></li>
-    
-
-    <li class="toctree-l2"><a href="#projects">Projects</a></li>
-    
-
-    <li class="toctree-l2"><a href="#environments">Environments</a></li>
-    
-
-    <li class="toctree-l2"><a href="#identities">Identities</a></li>
-    
-
-    <li class="toctree-l2"><a href="#segments">Segments</a></li>
+        <ul>
+        
+            <li><a class="toctree-l3" href="#organisations">Organisations</a></li>
+        
+            <li><a class="toctree-l3" href="#projects">Projects</a></li>
+        
+            <li><a class="toctree-l3" href="#environments">Environments</a></li>
+        
+            <li><a class="toctree-l3" href="#identities">Identities</a></li>
+        
+            <li><a class="toctree-l3" href="#traits">Traits</a></li>
+        
+            <li><a class="toctree-l3" href="#segments">Segments</a></li>
+        
+        </ul>
     
 
     </ul>
@@ -187,27 +187,46 @@
           <div role="main">
             <div class="section">
               
-                <h2 id="features">Features</h2>
-<p>Rather than just a flag that can be turned on / off, features within Bullet Train are pieces of functionality that have an enabled state as well as a configurable value. This allows you to use Bullet Train in the following ways.</p>
+                <h1 id="feature-flags">Feature Flags</h1>
+<p>Feature Flags are a development methodology that allow you to ship code and features before they are finished. This greatly benefits Continuous Integration and Continuous Deployment (CI/CD). The typical workflow for this is as follows.</p>
+<ol>
+<li>You are about to start work on a new feature. Lets imaging you are going to implement a sharing button with your application.</li>
+<li>Create a new Feature Flag in Bullet Train, calling it "sharing_button". Set it to enabled on your development environment, and disabled on your production environment.</li>
+<li>Start working on the feature. Whenever you write code that shows the button within the UI, wrap it in a conditional statement, testing against the value of the flag "sharing button". Only show the button if the flag is set to True.</li>
+<li>Because your button only shows when the "sharing_button" flag is set to True, you are safe to commit your code as you work on the feature. Your code will be live within the production platform, but the functionality is hidden behind the flag.</li>
+<li>Once you are happy with your Feature, you can enable the "sharing_button" for other members of your team and with Beta testers.</li>
+<li>If everything is working as intended, simply flip the "sharing_button" flag to True for everyone in your production environment, and your feature is rolled out.</li>
+</ol>
+<p>If you want to learn more about Feature Flags, <a href="https://code.flickr.net/2009/12/02/flipping-out/">Flickr wrote the seminal blog post on it in 2009.</a></p>
+<p>Flags within Bullet Train can be defined either as a boolean value, or as a String of text. This allows you to use Bullet Train in the multiple ways.</p>
 <ul>
-<li>Showing and hiding features in your application. E.g. Instant messaging within an application.</li>
+<li>Showing and hiding features in your application. E.g. A sharing button within an application.</li>
 <li>Configuring values used within your application remotely. E.g. The number of power-ups a user might have in a game.</li>
 <li>Configuring environment variables. E.g. Setting the database URL for your API.</li>
 </ul>
-<p>Features are created on a per project basis but edited per environment and can then be overridden on a per user basis. </p>
+<p>Features are created on a per project basis but edited per environment and can then be overridden on a per user basis.</p>
 <h2 id="organisations">Organisations</h2>
 <p>Organisations are a way for you and other team members to manage projects and their features. Users can be members of multiple organisations.</p>
 <h2 id="projects">Projects</h2>
 <p>Projects contain one or more environments that share a single set of features and one or more environments. Organisations can have any number of projects.</p>
 <h2 id="environments">Environments</h2>
-<p>Environments are a way to separate the configuration of your features. For example, your project's Development and Staging environments might have a feature configured as on while it is turned off in your Production environment. A project can have any number of environments. </p>
+<p>Environments are a way to separate the configuration of your features. For example, your project's Development and Staging environments might have a feature configured as on while it is turned off in your Production environment. A project can have any number of environments.</p>
 <h2 id="identities">Identities</h2>
-<p>Identities are a particular registration for one of your Project's environments. Registering identities within the client application allows you to manage features for individual users. Identity features can be overridden from your environment defaults. For example, joe@yourwebsite.com would be a different identity in your development environment to the one in production, and they can have different features enabled for each environment.</p>
-<p>For more info see the <a href="/managing-identities">Identities</a>.</p>
+<p>Identities are a particular user registration for one of your Project's environments. Registering identities within the client application allows you to manage features for individual users. Identity features can be overridden from your environment defaults. For example, joe@yourwebsite.com would be a different identity in your development environment to the one in production, and they can have different features enabled for each environment.</p>
+<p>For more info see <a href="../managing-identities">Identities</a>.</p>
+<h2 id="traits">Traits</h2>
+<p>You can store any number of Traits against an Identity. Traits are simple name:value pairs that can store any type of data. Some examples of traits that you might store against an Identity might be:</p>
+<ul>
+<li>The number of times the user has logged in.</li>
+<li>If they have accepted the application terms and conditions.</li>
+<li>Their preference for application theme.</li>
+<li>If they have performed certain actions within your application.</li>
+</ul>
+<p>For more info see <a href="../managing-identities/#identity-traits">Traits</a>.</p>
 <h2 id="segments">Segments</h2>
 <p>Segments are a way to define a group of users by traits such as number of times logged in, device, location or any number of custom defined traits.</p>
 <p>Similarly to individual users, you will be able to override environment defaults for features. For example showing certain features for a "power user" segment.</p>
-<p>For more info see the <a href="/managing-segments">Segments</a>.</p>
+<p>For more info see <a href="../managing-segments">Segments</a>.</p>
               
             </div>
           </div>
@@ -254,8 +273,9 @@
     </span>
 </div>
     <script>var base_url = '..';</script>
-    <script src="../js/theme.js" defer></script>
-      <script src="../search/main.js" defer></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/require.js"></script>
+      <script src="../search/search.js"></script>
 
 </body>
 </html>
