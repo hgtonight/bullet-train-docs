@@ -114,6 +114,15 @@
     <a class="current" href="./">iOS</a>
     <ul class="subnav">
             
+    <li class="toctree-l3"><a href="#ios-client">iOS Client</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#usage">Usage</a></li>
+        
+        </ul>
+    
+
     </ul>
                 </li>
                 <li class="">
@@ -178,7 +187,17 @@
           <div role="main">
             <div class="section">
               
-                <p>This library can be used with iOS and Mac applications. The source code for the client is available on <a href="https://github.com/SolidStateGroup/bullet-train-ios-client">Github</a>.</p>
+                <h1 id="ios-client">iOS Client</h1>
+<p>This library can be used with iOS and Mac applications. The source code for the client is available on <a href="https://github.com/SolidStateGroup/bullet-train-ios-client">Github</a>.</p>
+<h2 id="usage">Usage</h2>
+<pre><code class="swift">BulletTrain.shared.apiKey = &quot;&lt;add your API key from the Bullet Train settings page&gt;&quot;
+BulletTrain.shared.getFeatureFlags() { (result) in
+    print(result)
+}
+BulletTrain.shared.hasFeatureFlag(withID: &quot;freeze_delinquent_accounts&quot;) { (result) in
+    print(result)
+}
+</code></pre>
               
             </div>
           </div>
