@@ -8,7 +8,7 @@
   
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Audit Logs - Bullet Train Docs</title>
+  <title>System Administration - Bullet Train Docs</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../css/theme.css" type="text/css" />
@@ -17,9 +17,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Audit Logs";
-    var mkdocs_page_input_path = "audit-logs.md";
-    var mkdocs_page_url = "/audit-logs/";
+    var mkdocs_page_name = "System Administration";
+    var mkdocs_page_input_path = "system-administration.md";
+    var mkdocs_page_url = "/system-administration/";
   </script>
   
   <script src="../js/jquery-2.1.1.min.js" defer></script>
@@ -88,20 +88,26 @@
     <a class="" href="../staged-feature-rollouts/">Staged Feature Rollouts</a>
 	    </li>
           
-            <li class="toctree-l1">
-		
-    <a class="" href="../system-administration/">System Administration</a>
-	    </li>
-          
             <li class="toctree-l1 current">
 		
-    <a class="current" href="./">Audit Logs</a>
+    <a class="current" href="./">System Administration</a>
     <ul class="subnav">
             
-    <li class="toctree-l2"><a href="#audit-logs">Audit Logs</a></li>
+    <li class="toctree-l2"><a href="#system-administration">System Administration</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#user-roles">User Roles</a></li>
+        
+        </ul>
     
 
     </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../audit-logs/">Audit Logs</a>
 	    </li>
           
             <li class="toctree-l1">
@@ -169,10 +175,10 @@
     
       
     
-    <li>Audit Logs</li>
+    <li>System Administration</li>
     <li class="wy-breadcrumbs-aside">
       
-        <a href="https://github.com/SolidStateGroup/Bullet-Train-Docs/edit/master/docs/audit-logs.md"
+        <a href="https://github.com/SolidStateGroup/Bullet-Train-Docs/edit/master/docs/system-administration.md"
           class="icon icon-github"> Edit on GitHub</a>
       
     </li>
@@ -182,10 +188,14 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="audit-logs">Audit Logs</h1>
-<p>Every action taken within the Bullet Train adminstration application is tracked and logged.
-This allows you to easily retrace the events and values that flags, identities and segments have taken over time.</p>
-<p>You can view the Audit Log within the Bullet Train application, and filter it in order to find the information you are after. </p>
+                <h1 id="system-administration">System Administration</h1>
+<h2 id="user-roles">User Roles</h2>
+<p>There are currently 2 different role type available when managing the application.</p>
+<p>We will be rolling out fine grained user permissions in a future release.</p>
+<h3 id="admin-role">Admin Role</h3>
+<p>The Admin Role can perform all actions within the application, including the management of users who have access to the Bullet Train administrative console.</p>
+<h3 id="standard-user">Standard User</h3>
+<p>The Standard User can perform all actions within the application, but they <em>cannot</em> manage users within the Bullet Train administrative console.</p>
               
             </div>
           </div>
@@ -193,10 +203,10 @@ This allows you to easily retrace the events and values that flags, identities a
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../clients/javascript/" class="btn btn-neutral float-right" title="Javascript/React Native">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../audit-logs/" class="btn btn-neutral float-right" title="Audit Logs">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../system-administration/" class="btn btn-neutral" title="System Administration"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../staged-feature-rollouts/" class="btn btn-neutral" title="Staged Feature Rollouts"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -224,10 +234,10 @@ This allows you to easily retrace the events and values that flags, identities a
           <a href="https://github.com/SolidStateGroup/Bullet-Train-Docs/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
-        <span><a href="../system-administration/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../staged-feature-rollouts/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../clients/javascript/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../audit-logs/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
