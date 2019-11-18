@@ -8,7 +8,7 @@
   
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Hosted Service - Bullet Train Docs</title>
+  <title>A/B Testing - Bullet Train Docs</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../css/theme.css" type="text/css" />
@@ -17,9 +17,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Hosted Service";
-    var mkdocs_page_input_path = "hosted-service.md";
-    var mkdocs_page_url = "/hosted-service/";
+    var mkdocs_page_name = "A/B Testing";
+    var mkdocs_page_input_path = "ab-testing.md";
+    var mkdocs_page_url = "/ab-testing/";
   </script>
   
   <script src="../js/jquery-2.1.1.min.js"></script>
@@ -62,15 +62,9 @@
     <a class="" href="..">Overview and Install</a>
 	    </li>
           
-            <li class="toctree-l1 current">
+            <li class="toctree-l1">
 		
-    <a class="current" href="./">Hosted Service</a>
-    <ul class="subnav">
-            
-    <li class="toctree-l2"><a href="#hosted-service">Hosted Service</a></li>
-    
-
-    </ul>
+    <a class="" href="../hosted-service/">Hosted Service</a>
 	    </li>
           
             <li class="toctree-l1">
@@ -93,9 +87,21 @@
     <a class="" href="../staged-feature-rollouts/">Staged Feature Rollouts</a>
 	    </li>
           
-            <li class="toctree-l1">
+            <li class="toctree-l1 current">
 		
-    <a class="" href="../ab-testing/">A/B Testing</a>
+    <a class="current" href="./">A/B Testing</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#ab-testing">A/B Testing</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#overview">Overview</a></li>
+        
+        </ul>
+    
+
+    </ul>
 	    </li>
           
             <li class="toctree-l1">
@@ -173,10 +179,10 @@
     
       
     
-    <li>Hosted Service</li>
+    <li>A/B Testing</li>
     <li class="wy-breadcrumbs-aside">
       
-        <a href="https://github.com/SolidStateGroup/Bullet-Train-Docs/edit/master/docs/hosted-service.md"
+        <a href="https://github.com/SolidStateGroup/Bullet-Train-Docs/edit/master/docs/ab-testing.md"
           class="icon icon-github"> Edit on GitHub</a>
       
     </li>
@@ -186,10 +192,20 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="hosted-service">Hosted Service</h1>
-<p>If you would rather skip the hosting and jump straight to integrating Bullet Train with your own application, you can use <a href="https://bullet-train.io/">https://bullet-train.io/</a> right now.</p>
-<p>We are going to be bringing paid plans to the service soon, with pricing to suit startups, not enterprise customers.</p>
-<p>If you want to discuss hosting options, <a href="mailto:support@bullet-train.io">please get in touch</a>.</p>
+                <h1 id="ab-testing">A/B Testing</h1>
+<p>A/B testing enables you to expirement with design and functionality variants of your application. The data generated will allow you to make modifications to your app, safe in the knowledge that it will have a net postive effect.</p>
+<p>You can use Bullet Train to perform A/B Testing. Using a combination of <a href="../managing-segments/">Bullet Trains Segments</a> and a 3rd party analytics tool like <a href="https://analytics.google.com/">Google Analytics</a> or <a href="https://mixpanel.com/">Mixpanel</a>, you can generate the relevant data to perform the A/B test.</p>
+<h2 id="overview">Overview</h2>
+<p>For this example, lets assume we have an app that currently accepts Credit Card payments only. We have a hunch that we are losing out on potential customers that would like to pay with Paypal. We're going to test whether adding Paypal to the payment options increases our checkout rate.</p>
+<p>In order to perform an A/B Test, we need to complete the following steps:</p>
+<ol>
+<li>Create a new Feature Flag that will control whether the user sees the Paypal Button or not. We'll call this flag "Paypal Checkout Enabled".</li>
+<li>Create a new Segment, called "Paypal Checkout Enabled", with 1 Rule: Include users with a % Split figure of 50.</li>
+<li>In our app, we want to <a href="../managing-identities/">Identify</a> each user before they start the checkout process. All Bullet Train Segments need us to Identify the user, so we can uniquely identify them.</li>
+<li>When we get to the checkout page, check the state of the "Paypal Checkout Enabled" flag for that user. If it is enabled, show the Paypal payment button.</li>
+<li>Send a message to the Analytics platform, adding the name/value pair of "Paypal Checkout Enabled" and the value of the flag.</li>
+<li>Deploy your app and watch the data come in.</li>
+</ol>
               
             </div>
           </div>
@@ -197,10 +213,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../managing-features/" class="btn btn-neutral float-right" title="Managing Features">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../system-administration/" class="btn btn-neutral float-right" title="System Administration">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href=".." class="btn btn-neutral" title="Overview and Install"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../staged-feature-rollouts/" class="btn btn-neutral" title="Staged Feature Rollouts"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -228,10 +244,10 @@
           <a href="https://github.com/SolidStateGroup/Bullet-Train-Docs/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
-        <span><a href=".." style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../staged-feature-rollouts/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../managing-features/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../system-administration/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
