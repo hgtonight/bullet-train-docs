@@ -13,7 +13,7 @@
 
   <link rel="stylesheet" href="../css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
-  <link rel="stylesheet" href="../css/highlight.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
   
   <script>
     // Current page data
@@ -22,15 +22,16 @@
     var mkdocs_page_url = "/ab-testing/";
   </script>
   
-  <script src="../js/jquery-2.1.1.min.js"></script>
-  <script src="../js/modernizr-2.8.3.min.js"></script>
-  <script type="text/javascript" src="../js/highlight.pack.js"></script> 
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
   
   <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
       ga('create', 'UA-120237963-2', 'bullet-train.io');
       ga('send', 'pageview');
@@ -48,7 +49,7 @@
         <a href=".." class="icon icon-home"> Bullet Train Docs</a>
         <div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
   </form>
 </div>
       </div>
@@ -97,6 +98,8 @@
         <ul>
         
             <li><a class="toctree-l3" href="#overview">Overview</a></li>
+        
+            <li><a class="toctree-l3" href="#example">Example</a></li>
         
         </ul>
     
@@ -194,18 +197,20 @@
               
                 <h1 id="ab-testing">A/B Testing</h1>
 <p>A/B testing enables you to expirement with design and functionality variants of your application. The data generated will allow you to make modifications to your app, safe in the knowledge that it will have a net postive effect.</p>
-<p>You can use Bullet Train to perform A/B Testing. Using a combination of <a href="../managing-segments/">Bullet Trains Segments</a> and a 3rd party analytics tool like <a href="https://analytics.google.com/">Google Analytics</a> or <a href="https://mixpanel.com/">Mixpanel</a>, you can generate the relevant data to perform the A/B test.</p>
+<p>You can use Bullet Train to perform A/B Testing. Using a combination of <a href="/managing-segments.md">Bullet Trains Segments</a> and a 3rd party analytics tool like <a href="https://analytics.google.com/">Google Analytics</a> or <a href="https://mixpanel.com/">Mixpanel</a>, you can generate the relevant data to perform the A/B test.</p>
 <h2 id="overview">Overview</h2>
 <p>For this example, lets assume we have an app that currently accepts Credit Card payments only. We have a hunch that we are losing out on potential customers that would like to pay with Paypal. We're going to test whether adding Paypal to the payment options increases our checkout rate.</p>
 <p>In order to perform an A/B Test, we need to complete the following steps:</p>
 <ol>
 <li>Create a new Feature Flag that will control whether the user sees the Paypal Button or not. We'll call this flag "Paypal Checkout Enabled".</li>
 <li>Create a new Segment, called "Paypal Checkout Enabled", with 1 Rule: Include users with a % Split figure of 50.</li>
-<li>In our app, we want to <a href="../managing-identities/">Identify</a> each user before they start the checkout process. All Bullet Train Segments need us to Identify the user, so we can uniquely identify them.</li>
+<li>In our app, we want to <a href="/managing-identities.md">Identify</a> each user before they start the checkout process. All Bullet Train Segments need us to Identify the user, so we can uniquely identify them.</li>
 <li>When we get to the checkout page, check the state of the "Paypal Checkout Enabled" flag for that user. If it is enabled, show the Paypal payment button.</li>
 <li>Send a message to the Analytics platform, adding the name/value pair of "Paypal Checkout Enabled" and the value of the flag.</li>
 <li>Deploy your app and watch the data come in.</li>
 </ol>
+<h2 id="example">Example</h2>
+<p>We made <a href="https://github.com/SolidStateGroup/bullet-train-js-client/tree/master/examples/ab-testing">a repo</a> with a <a href="https://jsfiddle.net/vw0af7zq/">JSFiddle</a> that demonstrates an A/B Test using Javascript. </p>
               
             </div>
           </div>
@@ -252,9 +257,8 @@
     </span>
 </div>
     <script>var base_url = '..';</script>
-    <script src="../js/theme.js"></script>
-      <script src="../search/require.js"></script>
-      <script src="../search/search.js"></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
 
 </body>
 </html>
