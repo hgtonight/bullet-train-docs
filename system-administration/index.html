@@ -103,6 +103,8 @@
         
             <li><a class="toctree-l3" href="#web-hooks">Web Hooks</a></li>
         
+            <li><a class="toctree-l3" href="#full-api-access">Full API Access</a></li>
+        
             <li><a class="toctree-l3" href="#permissions-and-user-roles">Permissions and User Roles</a></li>
         
         </ul>
@@ -232,6 +234,17 @@
 }
 </code></pre>
 
+<h2 id="full-api-access">Full API Access</h2>
+<p>The client SDK libraries are designed solely for end client use, and do not have an interface to the full Bullet Train API. However, you can easily access the full API by generating a login token and sending that with your API requests. To generate a login token, send an HTTP POST to <a href="https://api.bullet-train.io/auth/login">https://api.bullet-train.io/auth/login</a> with the following JSON payload:</p>
+<pre><code class="bash">curl -X &quot;POST&quot; &quot;https://api.bullet-train.io/v1/auth/login/&quot; \
+     -H 'Content-Type: application/json; charset=utf-8' \
+     -d $'{
+  &quot;username&quot;: &quot;&lt;admin username&gt;&quot;,
+  &quot;password&quot;: &quot;&lt;admin password&gt;&quot;
+}'
+</code></pre>
+
+<p>This will generate a token (that does not expire) which you can then use with subsequent API calls. You can pass this token in the HTTP header with <code>Token &lt;token&gt;</code></p>
 <h2 id="permissions-and-user-roles">Permissions and User Roles</h2>
 <p>There are currently 2 different role type available when managing the application.</p>
 <p>We will be rolling out fine grained user permissions in a future release.</p>
