@@ -13,7 +13,7 @@
 
   <link rel="stylesheet" href="../css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
-  <link rel="stylesheet" href="../css/highlight.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
   
   <script>
     // Current page data
@@ -22,15 +22,16 @@
     var mkdocs_page_url = "/system-administration/";
   </script>
   
-  <script src="../js/jquery-2.1.1.min.js"></script>
-  <script src="../js/modernizr-2.8.3.min.js"></script>
-  <script type="text/javascript" src="../js/highlight.pack.js"></script> 
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
   
   <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
       ga('create', 'UA-120237963-2', 'bullet-train.io');
       ga('send', 'pageview');
@@ -48,7 +49,7 @@
         <a href=".." class="icon icon-home"> Bullet Train Docs</a>
         <div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
   </form>
 </div>
       </div>
@@ -209,24 +210,25 @@
 <p>Each event generates an HTTP POST with the following body payload to each of the Web Hooks defined within that Environment:</p>
 <pre><code class="json">{
     &quot;data&quot;: {
-        &quot;changed_by&quot;: &quot;Ben Rometsch&quot;,
+        &quot;changed_by&quot;: &quot;Admin User&quot;,
         &quot;new_state&quot;: {
             &quot;enabled&quot;: true,
-            &quot;environment&quot;: 4053,
+            &quot;environment&quot;: 33,
             &quot;feature&quot;: {
                 &quot;created_date&quot;: &quot;2019-12-11T15:47:26.959385Z&quot;,
                 &quot;default_enabled&quot;: true,
                 &quot;description&quot;: null,
-                &quot;id&quot;: 2391,
+                &quot;id&quot;: 33,
                 &quot;initial_value&quot;: null,
                 &quot;name&quot;: &quot;your_feature_name&quot;,
-                &quot;project&quot;: 1661,
+                &quot;project&quot;: 33,
                 &quot;type&quot;: &quot;FLAG&quot;
             },
             &quot;feature_segment&quot;: null,
             &quot;feature_state_value&quot;: null,
-            &quot;id&quot;: 7952,
-            &quot;identity&quot;: null
+            &quot;id&quot;: 33,
+            &quot;identity&quot;: 58234,
+            &quot;identity_identifier&quot;: &quot;user@domain.com&quot;
         },
         &quot;timestamp&quot;: &quot;2019-12-11T15:47:26.973Z&quot;
     },
@@ -298,9 +300,8 @@
     </span>
 </div>
     <script>var base_url = '..';</script>
-    <script src="../js/theme.js"></script>
-      <script src="../search/require.js"></script>
-      <script src="../search/search.js"></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
 
 </body>
 </html>
