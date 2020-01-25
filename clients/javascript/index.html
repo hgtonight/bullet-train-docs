@@ -633,6 +633,7 @@ for example the Development or Production environment. You can find your environ
 
 bulletTrain.init({
     environmentID:&quot;&lt;YOUR_ENVIRONMENT_KEY&gt;&quot;,
+    cacheFlags: true,
     onChange: (oldFlags,params)=&gt;{ //Occurs whenever flags are changed
 
         const {isFromServer} = params; //determines if the update came from the server or local cached storage
@@ -731,16 +732,22 @@ bulletTrain.init({
 <td align="right">null</td>
 </tr>
 <tr>
-<td><code>defaultFlags</code></td>
-<td align="center">Allows you define default features, these will all be overridden on first retrieval of features.</td>
+<td><code>cacheFlags</code></td>
+<td align="center">Any time flags are retrieved they will be cached, flags and identities will then be retrieved from local storage before hitting the API ```</td>
 <td align="right"></td>
 <td align="right">null</td>
 </tr>
 <tr>
-<td><code>disableCache</code></td>
-<td align="center">If you want to disable local storage of feature flags.</td>
+<td><code>enableLogs</code></td>
+<td align="center">Enables logging for key bullet train events ```</td>
 <td align="right"></td>
-<td align="right">false</td>
+<td align="right">null</td>
+</tr>
+<tr>
+<td><code>defaultFlags</code></td>
+<td align="center">Allows you define default features, these will all be overridden on first retrieval of features.</td>
+<td align="right"></td>
+<td align="right">null</td>
 </tr>
 <tr>
 <td><code>api</code></td>
