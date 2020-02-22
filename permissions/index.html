@@ -10,10 +10,10 @@
       <meta name="viewport" content="width=device-width,initial-scale=1">
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       
-        <meta name="description" content="Manage additional aspects of your Bullet Train platform.">
+        <meta name="description" content="Team member and group permissions.">
       
       
-        <link rel="canonical" href="https://docs.bullet-train.io/system-administration/">
+        <link rel="canonical" href="https://docs.bullet-train.io/permissions/">
       
       
       
@@ -40,7 +40,7 @@
     
     
       
-        <title>System Administration - Bullet Train Docs</title>
+        <title>Permissions - Bullet Train Docs</title>
       
     
     
@@ -106,7 +106,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#system-administration" tabindex="1" class="md-skip">
+      <a href="#permissions" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -132,7 +132,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                System Administration
+                Permissions
               
             </span>
           
@@ -325,18 +325,6 @@
       
       
 
-
-  <li class="md-nav__item">
-    <a href="../permissions/" title="Permissions" class="md-nav__link">
-      Permissions
-    </a>
-  </li>
-
-    
-      
-      
-      
-
   
 
 
@@ -347,46 +335,22 @@
       
     
     
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        System Administration
-      </label>
-    
-    <a href="./" title="System Administration" class="md-nav__link md-nav__link--active">
-      System Administration
+    <a href="./" title="Permissions" class="md-nav__link md-nav__link--active">
+      Permissions
     </a>
     
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
+  </li>
+
     
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#web-hooks" class="md-nav__link">
-    Web Hooks
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#full-api-access" class="md-nav__link">
-    Full API Access
-  </a>
-  
-</li>
       
       
       
-      
-      
-    </ul>
-  
-</nav>
-    
+
+
+  <li class="md-nav__item">
+    <a href="../system-administration/" title="System Administration" class="md-nav__link">
+      System Administration
+    </a>
   </li>
 
     
@@ -551,29 +515,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#web-hooks" class="md-nav__link">
-    Web Hooks
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#full-api-access" class="md-nav__link">
-    Full API Access
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -584,61 +525,72 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/BulletTrainHQ/Bullet-Train-Docs/edit/master/docs/system-administration.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/BulletTrainHQ/Bullet-Train-Docs/edit/master/docs/permissions.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="system-administration">System Administration</h1>
-<h2 id="web-hooks">Web Hooks</h2>
-<p>You can use the Web Hooks to send events from Bullet Train into your own infrastructure. Web Hooks are managed at an Environment level, and can be configured in the Environment settings page. </p>
-<p><img src="/images/add-webhook.png"/></p>
-<p>Currently the following events will generate a Web Hook action:</p>
-<ul>
-<li>Creating Flags</li>
-<li>Updating Flag state (both Flags and Remote Config)</li>
-<li>Deleting Flags</li>
-</ul>
-<p>You can define any number of Web Hook endpoints per Environment. Web Hooks can be managed from the Environment settings page.</p>
-<p>A typical use case for Web Hooks is if you want to cache flag state locally within your server environment.</p>
-<p>Each event generates an HTTP POST with the following body payload to each of the Web Hooks defined within that Environment:</p>
-<pre><code class="json">{
-    &quot;data&quot;: {
-        &quot;changed_by&quot;: &quot;Admin User&quot;,
-        &quot;new_state&quot;: {
-            &quot;enabled&quot;: true,
-            &quot;environment&quot;: 33,
-            &quot;feature&quot;: {
-                &quot;created_date&quot;: &quot;2019-12-11T15:47:26.959385Z&quot;,
-                &quot;default_enabled&quot;: true,
-                &quot;description&quot;: null,
-                &quot;id&quot;: 33,
-                &quot;initial_value&quot;: null,
-                &quot;name&quot;: &quot;your_feature_name&quot;,
-                &quot;project&quot;: 33,
-                &quot;type&quot;: &quot;FLAG&quot;
-            },
-            &quot;feature_segment&quot;: null,
-            &quot;feature_state_value&quot;: null,
-            &quot;id&quot;: 33,
-            &quot;identity&quot;: 58234,
-            &quot;identity_identifier&quot;: &quot;user@domain.com&quot;
-        },
-        &quot;timestamp&quot;: &quot;2019-12-11T15:47:26.973Z&quot;
-    },
-    &quot;event_type&quot;: &quot;FLAG_UPDATED&quot;
-}
-</code></pre>
-
-<h2 id="full-api-access">Full API Access</h2>
-<p>The client SDK libraries are designed solely for end client use, and do not have an interface to the full Bullet Train API. However, you can easily access the full API by generating a login token and sending that with your API requests. To generate a login token, send an HTTP POST to <a href="https://api.bullet-train.io/auth/login">https://api.bullet-train.io/auth/login</a> with the following JSON payload:</p>
-<pre><code class="bash">curl -X &quot;POST&quot; &quot;https://api.bullet-train.io/v1/auth/login/&quot; \
-     -H 'Content-Type: application/json; charset=utf-8' \
-     -d $'{
-  &quot;username&quot;: &quot;&lt;admin username&gt;&quot;,
-  &quot;password&quot;: &quot;&lt;admin password&gt;&quot;
-}'
-</code></pre>
-
-<p>This will generate a token (that does not expire) which you can then use with subsequent API calls. You can pass this token in the HTTP header with <code>Token &lt;token&gt;</code></p>
+                <h1 id="permissions">Permissions</h1>
+<p>Bullet Train provides fine-grained permissions to help larger teams manage access and roles across projects and environments. </p>
+<p>Permissions are assigned to individual team members or to groups. </p>
+<h1 id="groups">Groups</h1>
+<p>Groups are a convenient way to manage permissions for multiple team members. Groups can contain any number of team members. You can create groups with the Organisation Settings page. </p>
+<h1 id="organisations">Organisations</h1>
+<p>Team members can be defined as Organisation Administrators. This is effectively a super-user role, and gives full read/write access to every Project, Environment, Flag, Remote Config and Segment within that organisation.</p>
+<h1 id="projects">Projects</h1>
+<p>Team Members and Groups can be given individual roles at a Project level. </p>
+<table>
+<thead>
+<tr>
+<th><strong>Role</strong></th>
+<th><strong>Ability</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Administrator</td>
+<td>Full Read/Write ver all Environments, Feature Flag, Remote Config and Segment values</td>
+</tr>
+<tr>
+<td>View Project</td>
+<td>Can see the project within their account</td>
+</tr>
+<tr>
+<td>Create Environment</td>
+<td>Can create new Environments within the Project</td>
+</tr>
+<tr>
+<td>Create Feature</td>
+<td>Can create a new Feature / Remote Config</td>
+</tr>
+<tr>
+<td>Delete Feature</td>
+<td>Can remove an existing Feature / Remote Config entirely from the Project</td>
+</tr>
+<tr>
+<td>Edit Feature</td>
+<td>Can modify existing Feature / Remote Config</td>
+</tr>
+</tbody>
+</table>
+<h1 id="environments">Environments</h1>
+<p>Team Members and Groups can be given individual roles at an Environment level. </p>
+<table>
+<thead>
+<tr>
+<th><strong>Role</strong></th>
+<th><strong>Ability</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Administrator</td>
+<td>Can modify Feature Flag, Remote Config and Segment values</td>
+</tr>
+<tr>
+<td>View Environment</td>
+<td>Can see the Environment within their account</td>
+</tr>
+</tbody>
+</table>
                 
                   
                 
@@ -660,7 +612,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../permissions/" title="Permissions" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../ab-testing/" title="A/B Testing" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -669,19 +621,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Permissions
+                A/B Testing
               </span>
             </div>
           </a>
         
         
-          <a href="../audit-logs/" title="Audit Logs" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../system-administration/" title="System Administration" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Audit Logs
+                System Administration
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
