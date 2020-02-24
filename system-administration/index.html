@@ -36,7 +36,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
+      <meta name="generator" content="mkdocs-1.1, mkdocs-material-4.6.3">
     
     
       
@@ -44,12 +44,12 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/application.1b62728e.css">
+      <link rel="stylesheet" href="../assets/stylesheets/application.adb8469c.css">
       
       
     
     
-      <script src="../assets/javascripts/modernizr.268332fc.js"></script>
+      <script src="../assets/javascripts/modernizr.86422ebf.js"></script>
     
     
       
@@ -106,7 +106,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#system-administration" tabindex="1" class="md-skip">
+      <a href="#system-administration" tabindex="0" class="md-skip">
         Skip to content
       </a>
     
@@ -115,9 +115,9 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="https://docs.bullet-train.io/" title="Bullet Train Docs" class="md-header-nav__button md-logo">
+        <a href="https://docs.bullet-train.io/" title="Bullet Train Docs" aria-label="Bullet Train Docs" class="md-header-nav__button md-logo">
           
-            <img src="../images/logo.png" width="24" height="24">
+            <img alt="logo" src="../images/logo.png" width="24" height="24">
           
         </a>
       </div>
@@ -146,7 +146,7 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <input type="text" class="md-search__input" aria-label="search" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
       <label class="md-icon md-search__icon" for="__search"></label>
       <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
         &#xE5CD;
@@ -209,7 +209,7 @@
   <label class="md-nav__title md-nav__title--site" for="__drawer">
     <a href="https://docs.bullet-train.io/" title="Bullet Train Docs" class="md-nav__button md-logo">
       
-        <img src="../images/logo.png" width="48" height="48">
+        <img alt="logo" src="../images/logo.png" width="48" height="48">
       
     </a>
     Bullet Train Docs
@@ -368,6 +368,13 @@
         <li class="md-nav__item">
   <a href="#web-hooks" class="md-nav__link">
     Web Hooks
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#audit-log-webhooks" class="md-nav__link">
+    Audit Log Webhooks
   </a>
   
 </li>
@@ -562,6 +569,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#audit-log-webhooks" class="md-nav__link">
+    Audit Log Webhooks
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#full-api-access" class="md-nav__link">
     Full API Access
   </a>
@@ -589,7 +603,7 @@
                 
                 <h1 id="system-administration">System Administration</h1>
 <h2 id="web-hooks">Web Hooks</h2>
-<p>You can use the Web Hooks to send events from Bullet Train into your own infrastructure. Web Hooks are managed at an Environment level, and can be configured in the Environment settings page. </p>
+<p>You can use the Web Hooks to send events from Bullet Train into your own infrastructure. Web Hooks are managed at an Environment level, and can be configured in the Environment settings page.</p>
 <p><img src="/images/add-webhook.png"/></p>
 <p>Currently the following events will generate a Web Hook action:</p>
 <ul>
@@ -602,29 +616,51 @@
 <p>Each event generates an HTTP POST with the following body payload to each of the Web Hooks defined within that Environment:</p>
 <pre><code class="json">{
     &quot;data&quot;: {
-        &quot;changed_by&quot;: &quot;Admin User&quot;,
-        &quot;new_state&quot;: {
-            &quot;enabled&quot;: true,
-            &quot;environment&quot;: 33,
-            &quot;feature&quot;: {
-                &quot;created_date&quot;: &quot;2019-12-11T15:47:26.959385Z&quot;,
-                &quot;default_enabled&quot;: true,
-                &quot;description&quot;: null,
-                &quot;id&quot;: 33,
-                &quot;initial_value&quot;: null,
-                &quot;name&quot;: &quot;your_feature_name&quot;,
-                &quot;project&quot;: 33,
-                &quot;type&quot;: &quot;FLAG&quot;
-            },
-            &quot;feature_segment&quot;: null,
-            &quot;feature_state_value&quot;: null,
-            &quot;id&quot;: 33,
-            &quot;identity&quot;: 58234,
-            &quot;identity_identifier&quot;: &quot;user@domain.com&quot;
+        &quot;author&quot;: {
+            &quot;email&quot;: &quot;ben@bullet-train.io&quot;,
+            &quot;first_name&quot;: &quot;Ben&quot;,
+            &quot;id&quot;: 8,
+            &quot;last_name&quot;: &quot;Rometsch&quot;
         },
-        &quot;timestamp&quot;: &quot;2019-12-11T15:47:26.973Z&quot;
+        &quot;created_date&quot;: &quot;2020-02-24T11:18:28.809498Z&quot;,
+        &quot;environment&quot;: {
+            &quot;api_key&quot;: &quot;AF6tmkbBLywFXChJ7dTyCo&quot;,
+            &quot;id&quot;: 14,
+            &quot;name&quot;: &quot;Development&quot;,
+            &quot;project&quot;: 7
+        },
+        &quot;log&quot;: &quot;Flag state / Remote Config value updated for feature: power_user&quot;,
+        &quot;project&quot;: {
+            &quot;id&quot;: 7,
+            &quot;name&quot;: &quot;This is great&quot;,
+            &quot;organisation&quot;: 7
+        },
+        &quot;related_object_id&quot;: 37,
+        &quot;related_object_type&quot;: &quot;FEATURE_STATE&quot;
     },
-    &quot;event_type&quot;: &quot;FLAG_UPDATED&quot;
+    &quot;event_type&quot;: &quot;AUDIT_LOG_CREATED&quot;
+}
+</code></pre>
+
+<h2 id="audit-log-webhooks">Audit Log Webhooks</h2>
+<p>You can use Audit Log Webhooks to stream your Organisation's Audit Log into your own infrastructure. This can be useful for compliance or to reference against local CI/CD infrastructure.</p>
+<pre><code class="json">{
+  &quot;created_date&quot;: &quot;2020-02-23T17:30:57.006318Z&quot;,
+  &quot;log&quot;: &quot;New Flag / Remote Config created: my_feature&quot;,
+  &quot;author&quot;: {
+    &quot;id&quot;: 3,
+    &quot;email&quot;: &quot;user@domain.com&quot;,
+    &quot;first_name&quot;: &quot;Kyle&quot;,
+    &quot;last_name&quot;: &quot;Johnson&quot;
+  },
+  &quot;environment&quot;: null,
+  &quot;project&quot;: {
+    &quot;id&quot;: 6,
+    &quot;name&quot;: &quot;Project name&quot;,
+    &quot;organisation&quot;: 1
+  },
+  &quot;related_object_id&quot;: 6,
+  &quot;related_object_type&quot;: &quot;FEATURE&quot;
 }
 </code></pre>
 
@@ -697,9 +733,9 @@
       <div class="md-footer-copyright">
         
         powered by
-        <a href="https://www.mkdocs.org">MkDocs</a>
+        <a href="https://www.mkdocs.org" target="_blank" rel="noopener">MkDocs</a>
         and
-        <a href="https://squidfunk.github.io/mkdocs-material/">
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
           Material for MkDocs</a>
       </div>
       
@@ -709,9 +745,9 @@
       
     </div>
     
-      <script src="../assets/javascripts/application.808e90bb.js"></script>
+      <script src="../assets/javascripts/application.c33a9706.js"></script>
       
-      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+      <script>app.initialize({version:"1.1",url:{base:".."}})</script>
       
     
   </body>
